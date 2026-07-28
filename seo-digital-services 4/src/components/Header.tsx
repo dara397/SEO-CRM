@@ -17,24 +17,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#e8e2d8]">
-      {/* Top Security & Compliance Bar */}
-      <div className="bg-[#231e1a] text-[#d8cfc4] py-2 px-4 text-xs font-medium">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-          
-          <div className="flex items-center gap-2 text-[#d4a373]">
-            <ShieldCheck className="w-4 h-4 text-[#e0b589] shrink-0" />
-            <span className="font-semibold">HTTPS Verified SSL Security</span>
-            <span className="text-stone-600 hidden md:inline">•</span>
-            <span className="text-stone-300 hidden md:inline">Google Organic Health Compliant</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-xs text-stone-300">
-
-          </div>
-
-        </div>
-      </div>
-
+      
       {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
