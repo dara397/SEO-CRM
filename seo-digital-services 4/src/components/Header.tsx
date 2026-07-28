@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="flex items-center gap-3 text-xs text-stone-300">
-            <span>Minimum 6-Month Commitment</span>
+
           </div>
 
         </div>
