@@ -1,4 +1,19 @@
-export type ActiveTab = 'preview' | 'what-is-seo' | 'services' | 'pricing' | 'seo-tools';
+export type ActiveTab = 'preview' | 'what-is-seo' | 'services' | 'pricing' | 'seo-tools' | 'local-seo' | 'link-building' | 'lead-generation';
+
+export interface LandingPageData {
+  id: string;
+  kicker: string;
+  h1: string;
+  intro: string;
+  ctaLabel: string;
+  ctaSubject: string;
+  stats: { value: string; label: string }[];
+  sections: { heading: string; paragraphs: string[] }[];
+  deliverablesHeading: string;
+  deliverables: string[];
+  faqs: { q: string; a: string }[];
+  bottomCtaHeading: string;
+}
 
 export interface PackagePlan {
   id: string;
