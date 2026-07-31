@@ -62,10 +62,13 @@ export default function App() {
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
-  // Scroll to top and set the page title whenever the page changes
+  // Scroll to top and set the page title and canonical URL whenever the page changes
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = PAGE_TITLES[activeTab];
+    const url = 'https://seodigitalservices.com' + TAB_PATHS[activeTab];
+    document.getElementById('canonical-url')?.setAttribute('href', url);
+    document.getElementById('og-url')?.setAttribute('content', url);
   }, [activeTab]);
 
   const handleOpenReachOut = (subject: string = 'General Inquiry') => {
