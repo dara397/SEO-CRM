@@ -141,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
             <span>•</span>
             <span className="hover:text-stone-400 cursor-pointer">Terms of Service</span>
             <span>•</span>
-            <span className="hover:text-stone-400 cursor-pointer">Organic Guarantee</span>
+            <span className="hover:text-stone-400 cursor-pointer">Organic Standards</span>
           </div>
         </div>
 

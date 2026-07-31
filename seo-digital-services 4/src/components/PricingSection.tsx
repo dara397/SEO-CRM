@@ -30,7 +30,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
           </h2>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
-            All our SEO packages require a <strong className="text-stone-900">minimum 3-month commitment</strong> to guarantee organic rank compounding, with transparent pricing and custom enterprise plans available.
+            All our SEO packages require a <strong className="text-stone-900">minimum 3-month commitment</strong> so organic rankings have time to compound, with transparent pricing and custom enterprise plans available.
           </p>
 
           <div className="pt-2 flex flex-wrap justify-center items-center gap-3 text-xs font-semibold">

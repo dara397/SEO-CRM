@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Subheadline */}
             <p className="text-base sm:text-lg text-stone-600 max-w-xl leading-relaxed">
-              Accelerate organic traffic and capture Page 1 rankings through high-intent keyword clustering, technical audits, and high-authority backlinks.
+              Accelerate organic traffic and climb the rankings through high-intent keyword clustering, technical audits, and high-authority backlinks.
             </p>
 
             {/* CTAs */}

@@ -16,7 +16,7 @@ export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
   const [selectedServiceCategory, setSelectedServiceCategory] = useState<string>('All');
   const [activeMetricId, setActiveMetricId] = useState<string>('organic-traffic');
 
-  const categories = ['All', 'Core Service', 'Local Search', 'Technical', 'Authority', 'E-Commerce', 'Next-Gen SEO'];
+  const categories = ['All', 'Core Service', 'Lead Gen', 'Local Search', 'Technical', 'Authority', 'E-Commerce', 'Next-Gen SEO'];
 
   const filteredServices = selectedServiceCategory === 'All'
     ? SEO_SERVICES_LIST
@@ -32,15 +32,15 @@ export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
         <div className="text-center max-w-4xl mx-auto space-y-4">
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest bg-[#f2e7d8] text-[#6e4d2f] border border-[#e2d2bd]">
             <Globe className="w-3.5 h-3.5 text-[#a67c52]" />
-            ORGANIC SEARCH ENGINE OPTIMIZATION SERVICES
+            SEO & LEAD GENERATION SERVICES
           </span>
 
           <h1 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight leading-tight">
-            Comprehensive <span className="text-[#a67c52]">SEO Services</span> & Strategic Search Engine Optimization
+            <span className="text-[#a67c52]">SEO</span> & Lead Generation Services
           </h1>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-3xl mx-auto">
-            Discover our high-impact <strong className="text-stone-900">SEO services</strong> engineered for sustainable Google search ranking, high-converting organic traffic, technical site health, and long-term domain authority.
+            We rank your business on Google, then turn that traffic into leads. Pick a single service or let us manage the whole engine.
           </p>
 
           {/* Volume-Weighted Keywords Banner Bar (Light Brown Bar Background) */}
