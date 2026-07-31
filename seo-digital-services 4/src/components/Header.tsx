@@ -1,30 +1,62 @@
 import React from 'react';
-import { ShieldCheck, Sparkles, Globe, BarChart3, HelpCircle, MessageSquare, Layers } from 'lucide-react';
+import { Sparkles, Globe, HelpCircle, MessageSquare, Layers } from 'lucide-react';
 import { ActiveTab } from '../types';
+import { TAB_PATHS } from '../routes';
 
 interface HeaderProps {
   activeTab: ActiveTab;
   setActiveTab: (tab: ActiveTab) => void;
   onOpenReachOut: (subject?: string) => void;
-  domainName: string;
 }
+
+interface NavItem {
+  tab: ActiveTab;
+  label: string;
+  shortLabel: string;
+  Icon: React.ElementType;
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { tab: 'preview', label: 'Home', shortLabel: 'Home', Icon: Globe },
+  { tab: 'what-is-seo', label: 'What is SEO?', shortLabel: 'What is SEO?', Icon: HelpCircle },
+  { tab: 'services', label: 'Services', shortLabel: 'Services', Icon: Layers },
+  { tab: 'seo-tools', label: 'SEO Tools & Tips', shortLabel: 'SEO Tools', Icon: Sparkles },
+];
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
   onOpenReachOut,
-  domainName,
 }) => {
+  /**
+   * Navigation is rendered as real anchors with real hrefs so that crawlers can
+   * discover and follow every page. The click handler keeps client-side routing
+   * for plain left clicks, while modified clicks (open in new tab or window)
+   * fall through to native browser behaviour.
+   */
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    tab: ActiveTab,
+  ) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+    event.preventDefault();
+    setActiveTab(tab);
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#e8e2d8]">
-      
+
       {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
+
           {/* Logo / Brand */}
-          <button 
-            onClick={() => setActiveTab('preview')}
+          <a
+            href={TAB_PATHS['preview']}
+            onClick={(event) => handleNavClick(event, 'preview')}
+            aria-label="SEO Digital Services home"
             className="flex items-center gap-3 text-left focus:outline-none group"
           >
             <div className="w-10 h-10 rounded-xl bg-[#a67c52] text-white flex items-center justify-center font-extrabold text-lg shadow-sm group-hover:bg-[#8e653d] transition-colors">
@@ -38,74 +70,35 @@ export const Header: React.FC<HeaderProps> = ({
                 Organic Search Visibility
               </span>
             </div>
-          </button>
+          </a>
 
           {/* Navigation Links with Light Brown Bar Background */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#f2e7d8] p-1.5 rounded-2xl border border-[#e2d2bd] shadow-2xs">
-            <button
-              onClick={() => setActiveTab('preview')}
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all ${
-                activeTab === 'preview'
-                  ? 'bg-white text-[#a67c52] shadow-sm border border-[#d6c3ae]'
-                  : 'text-[#6e4d2f] hover:text-stone-900'
-              }`}
-            >
-              <Globe className="w-3.5 h-3.5" />
-              Home
-            </button>
-
-            <button
-              onClick={() => setActiveTab('what-is-seo')}
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all ${
-                activeTab === 'what-is-seo'
-                  ? 'bg-white text-[#a67c52] shadow-sm border border-[#d6c3ae]'
-                  : 'text-[#6e4d2f] hover:text-stone-900'
-              }`}
-            >
-              <HelpCircle className="w-3.5 h-3.5 text-[#a67c52]" />
-              What is SEO?
-            </button>
-
-            <button
-              onClick={() => setActiveTab('services')}
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all ${
-                activeTab === 'services'
-                  ? 'bg-white text-[#a67c52] shadow-sm border border-[#d6c3ae]'
-                  : 'text-[#6e4d2f] hover:text-stone-900'
-              }`}
-            >
-              <Layers className="w-3.5 h-3.5 text-[#a67c52]" />
-              Services
-            </button>
-
-            <button
-              onClick={() => setActiveTab('pricing')}
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all ${
-                activeTab === 'pricing'
-                  ? 'bg-white text-[#a67c52] shadow-sm border border-[#d6c3ae]'
-                  : 'text-[#6e4d2f] hover:text-stone-900'
-              }`}
-            >
-              <BarChart3 className="w-3.5 h-3.5" />
-              Service Packages
-            </button>
-
-            <button
-              onClick={() => setActiveTab('seo-tools')}
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all ${
-                activeTab === 'seo-tools'
-                  ? 'bg-white text-[#a67c52] shadow-sm border border-[#d6c3ae]'
-                  : 'text-[#6e4d2f] hover:text-stone-900'
-              }`}
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#a67c52]" />
-              SEO Tools & Tips
-            </button>
+          <nav
+            aria-label="Primary"
+            className="hidden md:flex items-center gap-1 bg-[#f2e7d8] p-1.5 rounded-2xl border border-[#e2d2bd] shadow-2xs"
+          >
+            {NAV_ITEMS.map(({ tab, label, Icon }) => (
+              <a
+                key={tab}
+                href={TAB_PATHS[tab]}
+                onClick={(event) => handleNavClick(event, tab)}
+                aria-current={activeTab === tab ? 'page' : undefined}
+                className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all ${
+                  activeTab === tab
+                    ? 'bg-white text-[#a67c52] shadow-sm border border-[#d6c3ae]'
+                    : 'text-[#6e4d2f] hover:text-stone-900'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5 text-[#a67c52]" />
+                {label}
+              </a>
+            ))}
           </nav>
 
           {/* Action Reach Out Button */}
           <div className="flex items-center gap-3">
             <button
+              type="button"
               onClick={() => onOpenReachOut('General Inquiry')}
               className="bg-[#a67c52] hover:bg-[#8e653d] text-white text-xs sm:text-sm font-extrabold px-5 py-2.5 rounded-xl shadow-sm transition-all flex items-center gap-2"
             >
@@ -118,48 +111,24 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Mobile Tab Bar with Light Brown Background */}
-      <div className="md:hidden flex border-t border-[#e2d2bd] bg-[#f2e7d8] p-1.5 overflow-x-auto gap-1">
-        <button
-          onClick={() => setActiveTab('preview')}
-          className={`flex-1 min-w-[75px] py-2 text-center text-xs font-bold rounded-lg ${
-            activeTab === 'preview' ? 'bg-white text-[#a67c52] shadow-xs' : 'text-[#6e4d2f]'
-          }`}
-        >
-          Home
-        </button>
-        <button
-          onClick={() => setActiveTab('what-is-seo')}
-          className={`flex-1 min-w-[85px] py-2 text-center text-xs font-bold rounded-lg ${
-            activeTab === 'what-is-seo' ? 'bg-white text-[#a67c52] shadow-xs' : 'text-[#6e4d2f]'
-          }`}
-        >
-          What is SEO?
-        </button>
-        <button
-          onClick={() => setActiveTab('services')}
-          className={`flex-1 min-w-[75px] py-2 text-center text-xs font-bold rounded-lg ${
-            activeTab === 'services' ? 'bg-white text-[#a67c52] shadow-xs' : 'text-[#6e4d2f]'
-          }`}
-        >
-          Services
-        </button>
-        <button
-          onClick={() => setActiveTab('pricing')}
-          className={`flex-1 min-w-[75px] py-2 text-center text-xs font-bold rounded-lg ${
-            activeTab === 'pricing' ? 'bg-white text-[#a67c52] shadow-xs' : 'text-[#6e4d2f]'
-          }`}
-        >
-          Packages
-        </button>
-        <button
-          onClick={() => setActiveTab('seo-tools')}
-          className={`flex-1 min-w-[75px] py-2 text-center text-xs font-bold rounded-lg ${
-            activeTab === 'seo-tools' ? 'bg-white text-[#a67c52] shadow-xs' : 'text-[#6e4d2f]'
-          }`}
-        >
-          SEO Tools
-        </button>
-      </div>
+      <nav
+        aria-label="Primary mobile"
+        className="md:hidden flex border-t border-[#e2d2bd] bg-[#f2e7d8] p-1.5 overflow-x-auto gap-1"
+      >
+        {NAV_ITEMS.map(({ tab, shortLabel }) => (
+          <a
+            key={tab}
+            href={TAB_PATHS[tab]}
+            onClick={(event) => handleNavClick(event, tab)}
+            aria-current={activeTab === tab ? 'page' : undefined}
+            className={`flex-1 min-w-[85px] min-h-[44px] flex items-center justify-center text-center text-xs font-bold rounded-lg ${
+              activeTab === tab ? 'bg-white text-[#a67c52] shadow-xs' : 'text-[#6e4d2f]'
+            }`}
+          >
+            {shortLabel}
+          </a>
+        ))}
+      </nav>
     </header>
   );
 };
