@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { Search, Compass, Wrench, Sparkles, CheckCircle2, TrendingUp, ShieldCheck, ArrowRight, MessageSquare, Phone, Mail, HelpCircle, Layers, Target, BarChart2 } from 'lucide-react';
+import { Search, Compass, Wrench, Sparkles, CheckCircle2, ShieldCheck, MessageSquare, Phone, Mail, HelpCircle } from 'lucide-react';
 import { WHAT_IS_SEO_TOPICS, BUSINESS_BENEFITS } from '../data/whatIsSeo';
 
 interface WhatIsSeoSectionProps {
-  onGoToPackages: () => void;
   onOpenReachOut: (subject?: string) => void;
 }
 
 export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
-  onGoToPackages,
   onOpenReachOut,
 }) => {
   const [selectedTopicId, setSelectedTopicId] = useState<string>('fundamentals');
@@ -18,20 +16,20 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
   return (
     <section className="py-16 bg-[#faf8f5] text-stone-900 min-h-screen border-t border-[#e8e2d8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest bg-[#f7efe3] text-[#6e4d2f] border border-[#e8dac8]">
             <HelpCircle className="w-3.5 h-3.5 text-[#a67c52]" />
             ORGANIC SEARCH EDUCATIONAL HUB
           </span>
-          
+
           <h1 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
             What is <span className="text-[#a67c52]">SEO</span> & Why Your Business Needs It
           </h1>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
-            Discover how search engine optimization works, why organic rankings drive continuous business growth, and how <strong className="text-stone-900">SEO Digital Services</strong> maximizes your Google search visibility.
+            Discover how search engine optimization works, why organic rankings drive continuous business growth, and how <strong className="text-stone-900">SEO Digital Services</strong> improves your Google search visibility.
           </p>
         </div>
 
@@ -42,7 +40,9 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
             return (
               <button
                 key={topic.id}
+                type="button"
                 onClick={() => setSelectedTopicId(topic.id)}
+                aria-pressed={isSelected}
                 className={`p-5 rounded-2xl text-left transition-all border ${
                   isSelected
                     ? 'bg-white border-[#a67c52] shadow-md ring-2 ring-[#a67c52]/20'
@@ -74,7 +74,7 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
 
         {/* Active Topic Feature Showcase */}
         <div className="bg-white border border-[#e8e2d8] rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
-          
+
           <div className="max-w-3xl space-y-3">
             <span className="text-xs font-extrabold uppercase tracking-wider text-[#a67c52] bg-[#f7efe3] px-3 py-1 rounded-md">
               {selectedTopic.subtitle}
@@ -123,7 +123,7 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
               Why Your Business Needs <span className="text-[#a67c52]">SEO Digital Services</span>
             </h2>
             <p className="text-stone-600 text-sm sm:text-base">
-              Organic search isn't optional—it's the primary engine of sustainable online authority and buyer acquisition.
+              Organic search is a primary engine of sustainable online authority and buyer acquisition.
             </p>
           </div>
 
@@ -138,28 +138,29 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
           </div>
         </div>
 
-        {/* SEO Terms Glossary / Tips & Tools Summary */}
+        {/* Closing CTA */}
         <div className="bg-[#231e1a] text-white rounded-3xl p-8 sm:p-12 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-8 space-y-4">
             <div className="inline-flex items-center gap-2 text-[#e0b589] text-xs font-bold uppercase tracking-wider bg-[#d4a373]/10 px-3 py-1 rounded-md border border-[#d4a373]/20">
               <ShieldCheck className="w-4 h-4 text-[#e0b589]" />
               <span>Full Service Organic Execution</span>
             </div>
-            
+
             <h2 className="text-2xl sm:text-3xl font-black text-white">
-              Ready to dominate your industry's search engine rankings?
+              Want to know where your search visibility stands today?
             </h2>
 
             <p className="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-2xl">
-              Our service packages provide transparent monthly pricing, a minimum 6-month commitment, $500 one-time setup fee, unlimited keyword research, and full technical audits.
+              Every engagement starts with a full technical audit, targeted keyword research, on-page and content optimization, and authority link building, with a minimum six-month commitment.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 text-xs text-stone-300 pt-2">
-              <a href="tel:9498781316" className="font-bold text-[#e0b589] hover:underline flex items-center gap-1.5">
-                <Phone className="w-4 h-4" /> (949)-878-1316
+              <a href="tel:+19498781316" className="font-bold text-[#e0b589] hover:underline flex items-center gap-1.5">
+                <Phone className="w-4 h-4" /> (949) 878-1316
               </a>
-              <span>•</span>
+              <span>&bull;</span>
               <button
+                type="button"
                 onClick={() => onOpenReachOut('Inquiry from What is SEO Page')}
                 className="font-semibold text-stone-200 hover:underline flex items-center gap-1.5"
               >
@@ -170,14 +171,15 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
 
           <div className="lg:col-span-4 flex flex-col gap-3">
             <button
-              onClick={onGoToPackages}
+              type="button"
+              onClick={() => onOpenReachOut('Free SEO Audit Request')}
               className="w-full bg-[#a67c52] hover:bg-[#8e653d] text-white font-extrabold py-4 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm"
             >
-              <span>Explore SEO Packages</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Request a Free SEO Audit</span>
             </button>
 
             <button
+              type="button"
               onClick={() => onOpenReachOut('Inquiry from What is SEO Page')}
               className="w-full bg-stone-800 hover:bg-stone-700 text-stone-100 font-bold py-3.5 px-6 rounded-xl border border-stone-700 transition-all flex items-center justify-center gap-2 text-xs"
             >
