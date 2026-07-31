@@ -155,10 +155,6 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
             </p>
 
             <div className="flex flex-wrap items-center gap-4 text-xs text-stone-300 pt-2">
-              <a href="tel:9498781316" className="font-bold text-[#e0b589] hover:underline flex items-center gap-1.5">
-                <Phone className="w-4 h-4" /> (949)-878-1316
-              </a>
-              <span>•</span>
               <button
                 onClick={() => onOpenReachOut('Inquiry from What is SEO Page')}
                 className="font-semibold text-stone-200 hover:underline flex items-center gap-1.5"

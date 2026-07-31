@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               <Sparkles className="w-3.5 h-3.5 text-[#a67c52]" />
-              SEO Tools & Tips
+              Tools & Tips
             </button>
           </nav>
 

@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
                   onClick={() => setActiveTab('seo-tools')}
                   className="hover:text-white transition-colors"
                 >
-                  SEO Tools & Tips
+                  Tools & Tips
                 </button>
               </li>
             </ul>
