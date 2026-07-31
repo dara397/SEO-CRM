@@ -26,9 +26,9 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
             ORGANIC SEARCH EDUCATIONAL HUB
           </span>
           
-          <h1 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
             What is <span className="text-[#a67c52]">SEO</span> & Why Your Business Needs It
-          </h1>
+          </h2>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
             Discover how search engine optimization works, why organic rankings drive continuous business growth, and how <strong className="text-stone-900">SEO Digital Services</strong> maximizes your Google search visibility.
@@ -151,7 +151,7 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
             </h2>
 
             <p className="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-2xl">
-              Our service packages provide transparent monthly pricing, a minimum 6-month commitment, $500 one-time setup fee, unlimited keyword research, and full technical audits.
+              Our service packages provide transparent monthly pricing, a minimum 6-month commitment, one-time setup fees from $750, targeted keyword research, and full technical audits.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 text-xs text-stone-300 pt-2">
