@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({
               <span className="text-stone-300 hidden sm:inline">•</span>
               <span className="flex items-center gap-1.5 text-stone-800">
                 <ShieldCheck className="w-4 h-4 text-[#a67c52] shrink-0" />
-                6-Month Minimum Commitment
+                3-Month Minimum Commitment
               </span>
             </div>
 

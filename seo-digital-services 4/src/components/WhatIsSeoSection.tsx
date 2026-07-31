@@ -151,7 +151,7 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
             </h2>
 
             <p className="text-xs sm:text-sm text-stone-300 leading-relaxed max-w-2xl">
-              Our service packages provide transparent monthly pricing, a minimum 6-month commitment, $500 one-time setup fee, unlimited keyword research, and full technical audits.
+              Our service packages provide transparent monthly pricing, a minimum 3-month commitment, $500 one-time setup fee, unlimited keyword research, and full technical audits.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 text-xs text-stone-300 pt-2">

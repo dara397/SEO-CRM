@@ -338,7 +338,7 @@ export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
               Need a tailored SEO service package for your specific domain?
             </h2>
             <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
-              Our organic search specialists conduct a complimentary website audit and present a 6-month compounding rank strategy tailored to your exact industry.
+              Our organic search specialists conduct a complimentary website audit and present a 3-month compounding rank strategy tailored to your exact industry.
             </p>
           </div>
 
