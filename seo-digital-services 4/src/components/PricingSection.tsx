@@ -25,9 +25,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
             TRANSPARENT AGENCY PACKAGES
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
             SEO Service Packages & Pricing
-          </h2>
+          </h1>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
             All our SEO packages require a <strong className="text-stone-900">minimum 6-month commitment</strong> to guarantee organic rank compounding, with transparent pricing and custom enterprise plans available.
