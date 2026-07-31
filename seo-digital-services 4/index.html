@@ -3,20 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SEO Digital Services | Organic Search Visibility & SEO Agency</title>
-    <meta name="description" content="SEO Digital Services is an organic search engine optimization agency delivering keyword strategy, technical audits, high-authority backlinks, and Page 1 Google rankings. Transparent monthly packages." />
+    <title>SEO Digital Services | Organic Search Visibility</title>
+    <meta name="description" content="Organic SEO agency services: keyword strategy, technical audits and authority link building that grow qualified search traffic." />
     <meta name="theme-color" content="#a67c52" />
+    <!--
+      Default (home page) canonical. src/routes.ts is the single source of truth and
+      App.tsx rewrites this tag plus og:url/og:title/description on every route change.
+    -->
     <link rel="canonical" href="https://seodigitalservices.com/" />
     <!-- Open Graph / social sharing -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SEO Digital Services" />
     <meta property="og:title" content="SEO Digital Services | Organic Search Visibility" />
-    <meta property="og:description" content="Grow your search rankings with proven organic SEO services. Keyword clustering, technical audits, and high-authority backlinks." />
+    <meta property="og:description" content="Organic SEO agency services: keyword strategy, technical audits and authority link building that grow qualified search traffic." />
     <meta property="og:url" content="https://seodigitalservices.com/" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- summary (not summary_large_image) because no og:image is published yet -->
+    <meta name="twitter:card" content="summary" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
