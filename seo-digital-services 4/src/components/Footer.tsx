@@ -79,6 +79,30 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
               </li>
               <li>
                 <button
+                  onClick={() => setActiveTab('local-seo')}
+                  className="hover:text-white transition-colors"
+                >
+                  Local SEO Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setActiveTab('link-building')}
+                  className="hover:text-white transition-colors"
+                >
+                  Link Building Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setActiveTab('lead-generation')}
+                  className="hover:text-white transition-colors"
+                >
+                  SEO Lead Generation
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => setActiveTab('seo-tools')}
                   className="hover:text-white transition-colors"
                 >
