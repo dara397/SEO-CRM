@@ -1,4 +1,4 @@
-export type ActiveTab = 'preview' | 'what-is-seo' | 'services' | 'pricing' | 'seo-tools';
+export type ActiveTab = 'preview' | 'what-is-seo' | 'services' | 'seo-tools';
 
 export interface PackagePlan {
   id: string;
