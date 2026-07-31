@@ -35,6 +35,17 @@ const PAGE_TITLES: Record<ActiveTab, string> = {
   'seo-tools': 'SEO Tools, Strategies & Best Practices | SEO Digital Services',
 };
 
+
+const PAGE_DESCRIPTIONS: Record<ActiveTab, string> = {
+  'preview': 'SEO Digital Services is an organic search engine optimization agency delivering keyword strategy, technical audits, high-authority backlinks, and Page 1 Google rankings.',
+  'what-is-seo': 'Learn how search engine optimization works, why organic rankings drive continuous business growth, and how SEO Digital Services maximizes your Google search visibility.',
+  'services': 'High-impact SEO services: managed campaigns, local SEO, technical audits, high-authority backlinks, ecommerce SEO, and AI search visibility.',
+  'pricing': 'Transparent SEO packages: Starter $997/mo, Growth $1,497/mo, or competitively priced custom plans. 3-month minimum commitment.',
+  'seo-tools': 'Curated SEO strategies, tips, and diagnostic tools to boost your Google ranking and organic search visibility.',
+};
+
+const SITE_ORIGIN = 'https://www.seodigitalservices.com';
+
 const tabFromPath = (): ActiveTab => {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
   return PATH_TABS[path] ?? 'preview';
@@ -62,10 +73,33 @@ export default function App() {
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
-  // Scroll to top and set the page title whenever the page changes
+  // Scroll to top and update SEO tags (title, canonical, meta) per page
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = PAGE_TITLES[activeTab];
+
+    const url = SITE_ORIGIN + TAB_PATHS[activeTab];
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = url;
+
+    const setMeta = (attr: string, key: string, content: string) => {
+      let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, key);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+    setMeta('name', 'description', PAGE_DESCRIPTIONS[activeTab]);
+    setMeta('property', 'og:title', PAGE_TITLES[activeTab]);
+    setMeta('property', 'og:description', PAGE_DESCRIPTIONS[activeTab]);
+    setMeta('property', 'og:url', url);
   }, [activeTab]);
 
   const handleOpenReachOut = (subject: string = 'General Inquiry') => {
