@@ -44,9 +44,9 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
             SEO TOOLS & STRATEGIC KNOWLEDGE
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
             SEO Tools, Strategies & Best Practices
-          </h2>
+          </h1>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
             Boost your Google ranking organic search visibility with our curated repository of <strong className="text-stone-900">SEO strategies</strong>, <strong className="text-stone-900">SEO tips</strong>, and diagnostic <strong className="text-stone-900">SEO tools</strong>.
