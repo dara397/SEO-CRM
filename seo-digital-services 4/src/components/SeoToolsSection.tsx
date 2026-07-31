@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
-import { Search, Sparkles, CheckCircle, AlertTriangle, Info, ArrowRight, ShieldCheck, Wrench, BarChart2, MessageSquare, Phone } from 'lucide-react';
-import { SEO_TIPS_DATA as SEO_TIPS, INITIAL_AUDIT_ITEMS as AUDIT_CHECKLIST } from '../data/seoContent';
+import { ArrowRight, Wrench } from 'lucide-react';
+import { SEO_TIPS_DATA as SEO_TIPS } from '../data/seoContent';
 
 interface SeoToolsSectionProps {
   onOpenReachOut: (topic?: string) => void;
-  onGoToWhatIsSeo: () => void;
 }
 
 export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
   onOpenReachOut,
-  onGoToWhatIsSeo,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [auditTargetUrl, setAuditTargetUrl] = useState<string>('');
-  const [isAuditing, setIsAuditing] = useState<boolean>(false);
-  const [auditDone, setAuditDone] = useState<boolean>(false);
 
   const categories = ['All', 'SEO Strategies', 'SEO Tips', 'SEO Tools', 'Google Organic Health'];
 
@@ -22,21 +17,10 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
     ? SEO_TIPS
     : SEO_TIPS.filter(t => t.category === selectedCategory);
 
-  const handleRunAudit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!auditTargetUrl) return;
-    setIsAuditing(true);
-
-    setTimeout(() => {
-      setIsAuditing(false);
-      setAuditDone(true);
-    }, 1000);
-  };
-
   return (
     <section className="py-16 bg-[#faf8f5] text-stone-900 border-t border-[#e8e2d8]" id="seo-tools">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest bg-[#f7efe3] text-[#6e4d2f] border border-[#e8dac8]">
@@ -44,23 +28,24 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
             SEO TOOLS & STRATEGIC KNOWLEDGE
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
             SEO Tools, Strategies & Best Practices
-          </h2>
+          </h1>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
-            Boost your Google ranking organic search visibility with our curated repository of <strong className="text-stone-900">SEO strategies</strong>, <strong className="text-stone-900">SEO tips</strong>, and diagnostic <strong className="text-stone-900">SEO tools</strong>.
+            Improve your organic search visibility with our curated repository of <strong className="text-stone-900">SEO strategies</strong>, <strong className="text-stone-900">SEO tips</strong>, and diagnostic <strong className="text-stone-900">SEO tools</strong>.
           </p>
         </div>
 
-        
-        {/* Categories Tabs & Tips List with Light Brown Bar Background */}
+        {/* Categories Tabs & Tips List */}
         <div className="space-y-6">
           <div className="bg-[#f2e7d8] border border-[#e2d2bd] p-2 rounded-2xl flex flex-wrap items-center gap-1.5 shadow-2xs">
             {categories.map((cat) => (
               <button
                 key={cat}
+                type="button"
                 onClick={() => setSelectedCategory(cat)}
+                aria-pressed={selectedCategory === cat}
                 className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all ${
                   selectedCategory === cat
                     ? 'bg-white text-[#a67c52] shadow-sm border border-[#d2c2b0]'
@@ -86,7 +71,7 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
                   </span>
                 </div>
 
-                <h3 className="text-lg font-black text-stone-900">{tip.title}</h3>
+                <h2 className="text-lg font-black text-stone-900">{tip.title}</h2>
                 <p className="text-xs text-stone-600 leading-relaxed">{tip.summary}</p>
 
                 <div className="space-y-2 pt-2 border-t border-stone-100">
@@ -94,7 +79,7 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
                   <ul className="space-y-1.5 text-xs text-stone-600">
                     {tip.steps.map((step, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-[#a67c52] font-bold">•</span>
+                        <span className="text-[#a67c52] font-bold" aria-hidden="true">&bull;</span>
                         <span>{step}</span>
                       </li>
                     ))}
@@ -103,7 +88,8 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
 
                 <div className="pt-2">
                   <button
-                    onClick={() => onOpenReachOut(`Question about ${tip.title}`)}
+                    type="button"
+                    onClick={() => onOpenReachOut('Question about ' + tip.title)}
                     className="text-xs font-extrabold text-[#a67c52] hover:underline flex items-center gap-1"
                   >
                     <span>Need help applying this? Reach out</span>
