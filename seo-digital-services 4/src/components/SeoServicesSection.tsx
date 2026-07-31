@@ -35,9 +35,9 @@ export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
             ORGANIC SEARCH ENGINE OPTIMIZATION SERVICES
           </span>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight leading-tight">
             Comprehensive <span className="text-[#a67c52]">SEO Services</span> & Strategic Search Engine Optimization
-          </h1>
+          </h2>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-3xl mx-auto">
             Discover our high-impact <strong className="text-stone-900">SEO services</strong> engineered for sustainable Google search ranking, high-converting organic traffic, technical site health, and long-term domain authority.
