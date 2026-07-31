@@ -2,6 +2,7 @@ import { SeoServiceItem, DashboardMetricHighlight } from '../types';
 
 export const TOP_VOLUME_KEYWORDS = [
   { keyword: 'seo services', volume: '49,500/mo', intent: 'Commercial' },
+  { keyword: 'lead generation services', volume: '33,100/mo', intent: 'Commercial' },
   { keyword: 'local seo services', volume: '27,100/mo', intent: 'Commercial' },
   { keyword: 'link building services', volume: '22,200/mo', intent: 'Commercial' },
   { keyword: 'organic search engine optimization', volume: '18,100/mo', intent: 'Informational/Commercial' },
@@ -16,105 +17,114 @@ export const TOP_VOLUME_KEYWORDS = [
 export const SEO_SERVICES_LIST: SeoServiceItem[] = [
   {
     id: 'managed-seo',
-    title: 'Full-Service Managed SEO Campaigns',
+    title: 'Full-Service SEO & Lead Generation',
     category: 'Core Service',
     searchVolume: '49,500/mo',
     keywordDifficulty: 'Medium-High',
-    primaryKeywords: ['seo services', 'managed seo services', 'organic search engine optimization', 'best seo agency'],
-    summary: 'End-to-end organic search management combining technical audits, high-intent keyword clustering, content publishing, and authority backlink acquisition under a guaranteed 3-month compounding roadmap.',
+    primaryKeywords: ['seo services', 'managed seo services', 'lead generation services'],
+    summary: 'SEO and lead capture managed end to end - keyword strategy, content, backlinks, and lead tracking under one monthly plan.',
     deliverables: [
-      'Dedicated Senior SEO Campaign Strategist',
-      'Comprehensive competitor gap analysis & search intent mapping',
-      'Monthly high-authority contextual backlink outreach',
-      'Weekly keyword position tracking and executive reporting',
-      'Full Google Organic Search Health compliance monitoring'
+      'Dedicated campaign strategist',
+      'Keyword strategy, content, and monthly backlinks',
+      'Weekly rank tracking and lead reporting'
     ],
-    businessImpact: 'Delivers a predictable, scalable inbound traffic engine that turns commercial search queries into high-value revenue leads.',
+    businessImpact: 'A predictable inbound pipeline from one monthly plan.',
     iconName: 'Globe'
   },
   {
+    id: 'lead-generation',
+    title: 'Lead Generation & Conversion Tracking',
+    category: 'Lead Gen',
+    searchVolume: '33,100/mo',
+    keywordDifficulty: 'Medium',
+    primaryKeywords: ['lead generation services', 'seo lead generation', 'inbound leads'],
+    summary: 'Conversion-focused landing pages plus call and form tracking, so every lead is counted and yours alone.',
+    deliverables: [
+      'Landing pages built to convert visitors',
+      'Call tracking and form analytics',
+      'Monthly lead report - calls, inquiries, sources'
+    ],
+    businessImpact: 'Exclusive, trackable leads - no per-lead cost.',
+    iconName: 'TrendingUp'
+  },
+  {
     id: 'local-seo',
-    title: 'Local SEO & Google Business Profile Optimization',
+    title: 'Local SEO & Google Business Profile',
     category: 'Local Search',
     searchVolume: '27,100/mo',
     keywordDifficulty: 'Low-Medium',
-    primaryKeywords: ['local seo services', 'google business profile optimization', 'local map pack ranking', 'citation building'],
-    summary: 'Dominate your regional market and secure top 3 Google Map Pack positions. We optimize your Google Business Profile, synchronize 150+ local directory citations, and establish automated review funnels.',
+    primaryKeywords: ['local seo services', 'google business profile optimization', 'local map pack'],
+    summary: 'Compete for the Google Map Pack where nearby customers are ready to call.',
     deliverables: [
-      'Complete Google Business Profile optimization & verification',
-      '100-150 localized directory citations (Yelp, YellowPages, Bing Places)',
-      'Automated review generation funnel for continuous customer reviews',
-      'Geo-targeted landing page creation & local schema markup'
+      'Google Business Profile optimization',
+      '100-150 local directory citations',
+      'Automated review generation funnel'
     ],
-    businessImpact: 'Captures high-intent local buyers searching for immediate service within your geographic territory.',
+    businessImpact: 'Puts you in front of local buyers searching right now.',
     iconName: 'MapPin'
   },
   {
     id: 'technical-seo',
-    title: 'Technical SEO Audits & Core Web Vitals Optimization',
+    title: 'Technical SEO & Site Speed',
     category: 'Technical',
     searchVolume: '12,100/mo',
     keywordDifficulty: 'High',
-    primaryKeywords: ['technical seo audit', 'core web vitals optimization', 'schema json-ld', 'crawlability audit'],
-    summary: 'Eliminate technical roadblocks preventing Google bots from crawling and indexing your site. We optimize LCP, FID, and CLS performance metrics, implement JSON-LD schema, and fix indexation errors.',
+    primaryKeywords: ['technical seo audit', 'core web vitals', 'site speed optimization'],
+    summary: 'We fix the technical issues that keep Google from crawling, indexing, and ranking your site.',
     deliverables: [
-      'In-depth 100-point technical site health audit',
-      'Core Web Vitals sub-second page speed acceleration',
-      'JSON-LD Structured Data Schema implementation (Organization, LocalBusiness, Product)',
-      'XML sitemap & robots.txt optimization with indexing fixes'
+      '100-point technical site audit',
+      'Core Web Vitals speed optimization',
+      'Schema markup and indexing fixes'
     ],
-    businessImpact: 'Ensures 100% search engine indexation health and max page experience scores required for top rank eligibility.',
+    businessImpact: 'A healthy, fast site eligible for top rankings.',
     iconName: 'Cpu'
   },
   {
     id: 'link-building',
-    title: 'High-Authority Backlink Acquisition & Digital PR',
+    title: 'High-Authority Link Building',
     category: 'Authority',
     searchVolume: '22,200/mo',
     keywordDifficulty: 'High',
-    primaryKeywords: ['link building services', 'backlink acquisition', 'domain authority score', 'contextual backlinks'],
-    summary: 'Build lasting Google trust with white-hat, editorially placed contextual backlinks from high-DR websites in your niche. Boost your Semrush Authority Score from 20s to 50+.',
+    primaryKeywords: ['link building services', 'backlink acquisition', 'domain authority'],
+    summary: 'White-hat editorial backlinks from real websites that raise your domain authority.',
     deliverables: [
-      'Manual blogger outreach & editorial guest placement',
-      'High Domain Rating (DR 40+) contextual links with relevant anchors',
-      'Toxic backlink audit & Google Disavow management',
-      'Transparent backlink reporting dashboard with live verification URLs'
+      'Manual outreach and editorial placements',
+      'DR 40+ contextual backlinks',
+      'Transparent reporting with live link URLs'
     ],
-    businessImpact: 'Directly elevates your domain authority score, enabling competitive keywords to jump from page 3 to top page 1 positions.',
+    businessImpact: 'Builds the authority competitive rankings are based on.',
     iconName: 'Link'
   },
   {
     id: 'ecommerce-seo',
-    title: 'Ecommerce SEO Services & Product Schema',
+    title: 'Ecommerce SEO',
     category: 'E-Commerce',
     searchVolume: '14,800/mo',
     keywordDifficulty: 'High',
-    primaryKeywords: ['ecommerce seo services', 'shopify seo', 'woocommerce optimization', 'product category ranking'],
-    summary: 'Drive high-converting shoppers directly to your product and category pages. Tailored for Shopify, WooCommerce, and custom ecommerce platforms seeking organic revenue growth.',
+    primaryKeywords: ['ecommerce seo services', 'shopify seo', 'product schema'],
+    summary: 'Send ready-to-buy shoppers to your product pages on Shopify, WooCommerce, or custom stores.',
     deliverables: [
-      'Ecommerce taxonomy & URL structure optimization',
-      'Rich Product Schema (stars, pricing, stock availability in Google SERPs)',
-      'Optimization for high-volume buyer category keywords',
-      'Faceted navigation and duplicate content canonicalization'
+      'Category and product page optimization',
+      'Rich product schema for Google results',
+      'Site structure and duplicate content fixes'
     ],
-    businessImpact: 'Unlocks organic shopping traffic, significantly lowering Customer Acquisition Cost (CAC) compared to Google Shopping Ads.',
+    businessImpact: 'Organic shopping traffic without per-click ad costs.',
     iconName: 'ShoppingCart'
   },
   {
     id: 'ai-seo',
-    title: 'AI Search Visibility & GEO (Generative Engine Optimization)',
+    title: 'AI Search Visibility (GEO)',
     category: 'Next-Gen SEO',
     searchVolume: '8,400/mo',
     keywordDifficulty: 'Emerging',
-    primaryKeywords: ['ai search visibility services', 'chatgpt ranking', 'google ai overview seo', 'gemini search optimization'],
-    summary: 'Position your brand as the cited answer in ChatGPT, Google AI Overviews, Gemini, and Claude. Optimize entity relationships and digital PR for generative search discovery.',
+    primaryKeywords: ['ai search visibility', 'chatgpt ranking', 'ai overviews'],
+    summary: 'Get your brand cited in ChatGPT, Gemini, and Google AI Overviews as search goes conversational.',
     deliverables: [
-      'AI Visibility score & brand mention tracking (ChatGPT, Gemini, AI Overviews)',
-      'Entity-focused knowledge graph optimization',
-      'Authoritative citation placement across AI source repositories',
-      'Structured Q&A content blocks for direct AI snippet extraction'
+      'AI visibility and brand mention tracking',
+      'Q&A content structured for AI citation',
+      'Entity and knowledge graph optimization'
     ],
-    businessImpact: 'Guarantees brand inclusion in AI-driven search answers as search behavior shifts toward conversational engines.',
+    businessImpact: 'Positions your brand to be cited in AI-driven answers.',
     iconName: 'Sparkles'
   }
 ];
@@ -127,7 +137,7 @@ export const DASHBOARD_METRICS_EXPLANATIONS: DashboardMetricHighlight[] = [
     change: '+4.12% MoM',
     importanceRating: 'Critical Growth',
     explanation: 'Organic Traffic represents real human visitors reaching your website directly from unpaid Google search results. Unlike paid PPC ads that stop the second budget ends, organic traffic provides compounding, continuous customer leads without per-click cost.',
-    howWeOptimize: 'We expand keyword coverage with targeted commercial blog articles, optimize title tags for high CTR, and rank primary category pages on Page 1.',
+    howWeOptimize: 'We expand keyword coverage with targeted commercial blog articles, optimize title tags for high CTR, and push primary category pages up the rankings.',
     keywords: ['organic traffic growth', 'google search traffic', 'inbound lead pipeline']
   },
   {

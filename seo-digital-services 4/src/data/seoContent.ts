@@ -94,6 +94,6 @@ export const INITIAL_AUDIT_ITEMS: AuditItem[] = [
     category: 'Performance',
     status: 'passed',
     score: 99,
-    recommendation: 'LCP under 1.2s, FID under 10ms, CLS 0.00. High organic rank potential guaranteed.'
+    recommendation: 'LCP under 1.2s, FID under 10ms, CLS 0.00. High organic rank potential.'
   }
 ];
