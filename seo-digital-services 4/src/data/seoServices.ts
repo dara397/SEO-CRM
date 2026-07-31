@@ -21,7 +21,7 @@ export const SEO_SERVICES_LIST: SeoServiceItem[] = [
     searchVolume: '49,500/mo',
     keywordDifficulty: 'Medium-High',
     primaryKeywords: ['seo services', 'managed seo services', 'organic search engine optimization', 'best seo agency'],
-    summary: 'End-to-end organic search management combining technical audits, high-intent keyword clustering, content publishing, and authority backlink acquisition under a guaranteed 6-month compounding roadmap.',
+    summary: 'End-to-end organic search management combining technical audits, high-intent keyword clustering, content publishing, and authority backlink acquisition under a guaranteed 3-month compounding roadmap.',
     deliverables: [
       'Dedicated Senior SEO Campaign Strategist',
       'Comprehensive competitor gap analysis & search intent mapping',

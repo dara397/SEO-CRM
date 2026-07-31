@@ -73,7 +73,7 @@ export const BUSINESS_BENEFITS = [
   },
   {
     number: '04',
-    title: 'Consistent 6-Month Compounding Growth',
-    description: 'With our minimum 6-month commitment packages, your site builds snowballing rank authority through consistent blog articles, local citations, and high-quality contextual backlinks.'
+    title: 'Consistent 3-Month Compounding Growth',
+    description: 'With our minimum 3-month commitment packages, your site builds snowballing rank authority through consistent blog articles, local citations, and high-quality contextual backlinks.'
   }
 ];
