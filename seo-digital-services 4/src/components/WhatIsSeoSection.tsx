@@ -26,9 +26,9 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
             ORGANIC SEARCH EDUCATIONAL HUB
           </span>
           
-          <h2 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-stone-900 tracking-tight">
             What is <span className="text-[#a67c52]">SEO</span> & Why Your Business Needs It
-          </h2>
+          </h1>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
             Discover how search engine optimization works, why organic rankings drive continuous business growth, and how <strong className="text-stone-900">SEO Digital Services</strong> maximizes your Google search visibility.
