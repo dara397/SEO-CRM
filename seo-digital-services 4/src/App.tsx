@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { WhatIsSeoSection } from './components/WhatIsSeoSection';
@@ -9,12 +9,64 @@ import { BookingModal } from './components/BookingModal';
 import { Footer } from './components/Footer';
 import { ActiveTab } from './types';
 
+
+// --- URL routing: each page gets a real URL ---
+const TAB_PATHS: Record<ActiveTab, string> = {
+  'preview': '/',
+  'what-is-seo': '/what-is-seo',
+  'services': '/services',
+  'pricing': '/pricing',
+  'seo-tools': '/seo-tools',
+};
+
+const PATH_TABS: Record<string, ActiveTab> = {
+  '/': 'preview',
+  '/what-is-seo': 'what-is-seo',
+  '/services': 'services',
+  '/pricing': 'pricing',
+  '/seo-tools': 'seo-tools',
+};
+
+const PAGE_TITLES: Record<ActiveTab, string> = {
+  'preview': 'SEO Digital Services | Organic Search Visibility & SEO Agency',
+  'what-is-seo': 'What is SEO & Why Your Business Needs It | SEO Digital Services',
+  'services': 'SEO Services & Search Engine Optimization | SEO Digital Services',
+  'pricing': 'SEO Service Packages & Pricing | SEO Digital Services',
+  'seo-tools': 'SEO Tools, Strategies & Best Practices | SEO Digital Services',
+};
+
+const tabFromPath = (): ActiveTab => {
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+  return PATH_TABS[path] ?? 'preview';
+};
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState<ActiveTab>('preview');
+  const [activeTab, setActiveTabState] = useState<ActiveTab>(tabFromPath);
   const [isReachOutOpen, setIsReachOutOpen] = useState(false);
   const [reachOutSubject, setReachOutSubject] = useState('General Inquiry');
 
   const domainName = 'seodigitalservices.com';
+
+  // Navigate: update the URL and the visible page
+  const setActiveTab = useCallback((tab: ActiveTab) => {
+    if (window.location.pathname !== TAB_PATHS[tab]) {
+      window.history.pushState({}, '', TAB_PATHS[tab]);
+    }
+    setActiveTabState(tab);
+  }, []);
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const onPopState = () => setActiveTabState(tabFromPath());
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  // Scroll to top and set the page title whenever the page changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = PAGE_TITLES[activeTab];
+  }, [activeTab]);
 
   const handleOpenReachOut = (subject: string = 'General Inquiry') => {
     setReachOutSubject(subject);
@@ -35,42 +87,13 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1">
         {activeTab === 'preview' && (
-          <>
-            <Hero
-              onGoToPackages={() => {
-                const pricingEl = document.getElementById('pricing');
-                if (pricingEl) {
-                  pricingEl.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  setActiveTab('pricing');
-                }
-              }}
-              onGoToWhatIsSeo={() => setActiveTab('what-is-seo')}
-              onGoToServices={() => setActiveTab('services')}
-              onOpenReachOut={() => handleOpenReachOut('Hero Direct Inquiry')}
-              domainName={domainName}
-            />
-
-            <WhatIsSeoSection
-              onGoToPackages={() => setActiveTab('pricing')}
-              onOpenReachOut={handleOpenReachOut}
-            />
-
-            <SeoServicesSection
-              onGoToPackages={() => setActiveTab('pricing')}
-              onOpenReachOut={handleOpenReachOut}
-            />
-
-            <PricingSection
-              onOpenReachOut={handleOpenReachOut}
-              onGoToWhatIsSeo={() => setActiveTab('what-is-seo')}
-            />
-
-            <SeoToolsSection
-              onOpenReachOut={handleOpenReachOut}
-              onGoToWhatIsSeo={() => setActiveTab('what-is-seo')}
-            />
-          </>
+          <Hero
+            onGoToPackages={() => setActiveTab('pricing')}
+            onGoToWhatIsSeo={() => setActiveTab('what-is-seo')}
+            onGoToServices={() => setActiveTab('services')}
+            onOpenReachOut={() => handleOpenReachOut('Hero Direct Inquiry')}
+            domainName={domainName}
+          />
         )}
 
         {activeTab === 'what-is-seo' && (
