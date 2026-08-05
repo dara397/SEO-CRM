@@ -62,7 +62,7 @@ export const INITIAL_AUDIT_ITEMS: AuditItem[] = [
     category: 'Security & Protocol',
     status: 'passed',
     score: 100,
-    recommendation: 'Active HTTPS protocol with 256-bit TLS encryption verified for seodigitalservices.com.'
+    recommendation: 'Active HTTPS protocol with 256-bit TLS encryption verified for pgblueprint.com.'
   },
   {
     id: 'mobile-check',
