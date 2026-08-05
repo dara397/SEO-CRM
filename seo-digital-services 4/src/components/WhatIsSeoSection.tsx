@@ -31,7 +31,7 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
           </h1>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
-            Discover how search engine optimization works, why organic rankings drive continuous business growth, and how <strong className="text-stone-900">SEO Digital Services</strong> maximizes your Google search visibility.
+            Discover how search engine optimization works, why organic rankings drive continuous business growth, and how <strong className="text-stone-900">PGBlueprint</strong> maximizes your Google search visibility.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ export const WhatIsSeoSection: React.FC<WhatIsSeoSectionProps> = ({
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-stone-900">
-              Why Your Business Needs <span className="text-[#a67c52]">SEO Digital Services</span>
+              Why Your Business Needs <span className="text-[#a67c52]">PGBlueprint</span>
             </h2>
             <p className="text-stone-600 text-sm sm:text-base">
               Organic search isn't optional—it's the primary engine of sustainable online authority and buyer acquisition.
