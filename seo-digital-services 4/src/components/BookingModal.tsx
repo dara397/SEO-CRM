@@ -101,12 +101,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-xs">
-      <div className="relative w-full max-w-xl bg-white border border-[#e8e2d8] rounded-3xl shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-xl bg-white border border-[#dceaf3] rounded-3xl shadow-2xl overflow-hidden">
         
         {/* Top Header */}
-        <div className="bg-[#231e1a] text-white p-6 flex items-center justify-between">
+        <div className="bg-[#1b2730] text-white p-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#a67c52] text-white flex items-center justify-center font-black text-base shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-[#6aaed9] text-white flex items-center justify-center font-black text-base shadow-sm">
               S
             </div>
             <div>
@@ -138,14 +138,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 </p>
               </div>
 
-              <div className="bg-[#faf8f5] border border-[#e8e2d8] p-4 rounded-2xl max-w-md mx-auto text-xs text-stone-700 space-y-1 text-center">
+              <div className="bg-[#f5fbfe] border border-[#dceaf3] p-4 rounded-2xl max-w-md mx-auto text-xs text-stone-700 space-y-1 text-center">
                 <div className="font-extrabold text-stone-900">Inquiry Received</div>
                 <div>An organic SEO strategist will reach out to you directly via your provided email address.</div>
               </div>
 
               <button
                 onClick={handleReset}
-                className="bg-[#a67c52] hover:bg-[#8e653d] text-white font-extrabold px-8 py-3 rounded-xl transition-all text-sm shadow-xs"
+                className="bg-[#6aaed9] hover:bg-[#4f97c6] text-white font-extrabold px-8 py-3 rounded-xl transition-all text-sm shadow-xs"
               >
                 Close & Return
               </button>
@@ -153,8 +153,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               
-              <div className="bg-[#f7efe3] border border-[#e8dac8] p-3 rounded-xl flex items-center gap-2 text-xs text-[#6e4d2f] font-medium">
-                <Sparkles className="w-4 h-4 text-[#a67c52] shrink-0" />
+              <div className="bg-[#eef7fc] border border-[#d8ecf7] p-3 rounded-xl flex items-center gap-2 text-xs text-[#3a6b87] font-medium">
+                <Sparkles className="w-4 h-4 text-[#6aaed9] shrink-0" />
                 <span>Subject: <strong>{formData.selectedPlanOrAddon}</strong></span>
               </div>
 
@@ -167,7 +167,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     placeholder="e.g. Sarah Jenkins"
-                    className="w-full px-3.5 py-2.5 bg-[#faf8f5] border border-[#e8e2d8] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#a67c52] focus:bg-white"
+                    className="w-full px-3.5 py-2.5 bg-[#f5fbfe] border border-[#dceaf3] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#6aaed9] focus:bg-white"
                   />
                 </div>
 
@@ -179,7 +179,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="sarah@yourcompany.com"
-                    className="w-full px-3.5 py-2.5 bg-[#faf8f5] border border-[#e8e2d8] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#a67c52] focus:bg-white"
+                    className="w-full px-3.5 py-2.5 bg-[#f5fbfe] border border-[#dceaf3] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#6aaed9] focus:bg-white"
                   />
                 </div>
               </div>
@@ -193,7 +193,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="(555) 000-0000"
-                    className="w-full px-3.5 py-2.5 bg-[#faf8f5] border border-[#e8e2d8] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#a67c52] focus:bg-white"
+                    className="w-full px-3.5 py-2.5 bg-[#f5fbfe] border border-[#dceaf3] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#6aaed9] focus:bg-white"
                   />
                 </div>
 
@@ -204,7 +204,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     value={formData.websiteUrl}
                     onChange={(e) => setFormData({ ...formData, websiteUrl: e.target.value })}
                     placeholder="https://yourwebsite.com"
-                    className="w-full px-3.5 py-2.5 bg-[#faf8f5] border border-[#e8e2d8] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#a67c52] focus:bg-white"
+                    className="w-full px-3.5 py-2.5 bg-[#f5fbfe] border border-[#dceaf3] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#6aaed9] focus:bg-white"
                   />
                 </div>
               </div>
@@ -216,7 +216,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us about your target keywords, competitors, or current organic ranking goals..."
-                  className="w-full px-3.5 py-2.5 bg-[#faf8f5] border border-[#e8e2d8] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#a67c52] focus:bg-white resize-none"
+                  className="w-full px-3.5 py-2.5 bg-[#f5fbfe] border border-[#dceaf3] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#6aaed9] focus:bg-white resize-none"
                 />
               </div>
 
@@ -229,7 +229,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full sm:w-auto bg-[#a67c52] hover:bg-[#8e653d] text-white font-extrabold text-xs px-7 py-3 rounded-xl shadow-xs transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto bg-[#6aaed9] hover:bg-[#4f97c6] text-white font-extrabold text-xs px-7 py-3 rounded-xl shadow-xs transition-all flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <span>Sending Message...</span>
