@@ -15,13 +15,13 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
   const [billingCycle] = useState<'monthly'>('monthly');
 
   return (
-    <section className="py-16 bg-[#faf8f5] text-stone-900 border-t border-[#e8e2d8]" id="pricing">
+    <section className="py-16 bg-[#f5fbfe] text-stone-900 border-t border-[#dceaf3]" id="pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest bg-[#f7efe3] text-[#6e4d2f] border border-[#e8dac8]">
-            <ShieldCheck className="w-3 h-3.5 text-[#a67c52]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest bg-[#eef7fc] text-[#3a6b87] border border-[#d8ecf7]">
+            <ShieldCheck className="w-3 h-3.5 text-[#6aaed9]" />
             TRANSPARENT AGENCY PACKAGES
           </div>
 
@@ -34,13 +34,13 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
           </p>
 
           <div className="pt-2 flex flex-wrap justify-center items-center gap-3 text-xs font-semibold">
-            <span className="bg-white px-3.5 py-1.5 rounded-xl border border-[#e8e2d8] text-stone-700 shadow-2xs">
+            <span className="bg-white px-3.5 py-1.5 rounded-xl border border-[#dceaf3] text-stone-700 shadow-2xs">
               ✓ 3-Month Minimum Contract
             </span>
-            <span className="bg-white px-3.5 py-1.5 rounded-xl border border-[#e8e2d8] text-stone-700 shadow-2xs">
+            <span className="bg-white px-3.5 py-1.5 rounded-xl border border-[#dceaf3] text-stone-700 shadow-2xs">
               ✓ Transparent One-Time Setup Fees
             </span>
-            <span className="bg-white px-3.5 py-1.5 rounded-xl border border-[#e8e2d8] text-stone-700 shadow-2xs">
+            <span className="bg-white px-3.5 py-1.5 rounded-xl border border-[#dceaf3] text-stone-700 shadow-2xs">
               ✓ Google Organic Health Compliant
             </span>
           </div>
@@ -56,13 +56,13 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                 key={plan.id}
                 className={`relative bg-white rounded-3xl p-6 sm:p-7 flex flex-col justify-between border transition-all duration-200 ${
                   isPopular
-                    ? 'border-[#a67c52] shadow-xl ring-2 ring-[#a67c52]/20'
-                    : 'border-[#e8e2d8] shadow-sm hover:shadow-md'
+                    ? 'border-[#6aaed9] shadow-xl ring-2 ring-[#6aaed9]/20'
+                    : 'border-[#dceaf3] shadow-sm hover:shadow-md'
                 }`}
               >
                 {/* Popular / Recommended Badge */}
                 {isPopular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#a67c52] text-white text-[11px] font-extrabold uppercase tracking-wider px-4 py-1 rounded-full shadow-sm">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#6aaed9] text-white text-[11px] font-extrabold uppercase tracking-wider px-4 py-1 rounded-full shadow-sm">
                     Most Popular Choice
                   </div>
                 )}
@@ -72,7 +72,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <h3 className="text-xl font-black text-stone-900">{plan.name}</h3>
                     {plan.badge && (
-                      <span className="text-[10px] font-bold bg-[#f7efe3] text-[#6e4d2f] px-2.5 py-0.5 rounded-md border border-[#e8dac8]">
+                      <span className="text-[10px] font-bold bg-[#eef7fc] text-[#3a6b87] px-2.5 py-0.5 rounded-md border border-[#d8ecf7]">
                         {plan.badge}
                       </span>
                     )}
@@ -105,22 +105,22 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                   {/* Core Features List */}
                   <div className="space-y-3 text-xs text-stone-700 font-medium mb-6">
                     <div className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-[#a67c52] shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#6aaed9] shrink-0 mt-0.5" />
                       <span><strong className="text-stone-900">{plan.pages}</strong> pages optimized</span>
                     </div>
 
                     <div className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-[#a67c52] shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#6aaed9] shrink-0 mt-0.5" />
                       <span><strong className="text-stone-900">{plan.websiteAudit}</strong> audit frequency</span>
                     </div>
 
                     <div className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-[#a67c52] shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#6aaed9] shrink-0 mt-0.5" />
                       <span><strong className="text-stone-900">{plan.keywordResearch}</strong> keyword scope</span>
                     </div>
 
                     <div className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-[#a67c52] shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#6aaed9] shrink-0 mt-0.5" />
                       <span>
                         {typeof plan.blogArticles === 'number' ? (
                           <><strong className="text-stone-900">{plan.blogArticles}</strong> blog articles / month</>
@@ -131,7 +131,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                     </div>
 
                     <div className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-[#a67c52] shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#6aaed9] shrink-0 mt-0.5" />
                       <span>
                         {typeof plan.backlinks === 'number' ? (
                           <><strong className="text-stone-900">{plan.backlinks}</strong> high-authority backlinks / mo</>
@@ -142,7 +142,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                     </div>
 
                     <div className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-[#a67c52] shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#6aaed9] shrink-0 mt-0.5" />
                       <span>
                         {typeof plan.localCitations === 'number' ? (
                           <><strong className="text-stone-900">{plan.localCitations}</strong> local citation submissions</>
@@ -154,20 +154,20 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
 
                     {plan.businessProfile && (
                       <div className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-[#a67c52] shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-[#6aaed9] shrink-0 mt-0.5" />
                         <span>Google Business Profile management</span>
                       </div>
                     )}
 
                     {plan.reviewFunnel && (
                       <div className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-[#a67c52] shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-[#6aaed9] shrink-0 mt-0.5" />
                         <span>Google Review Generation Funnel</span>
                       </div>
                     )}
 
                     <div className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-[#a67c52] shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#6aaed9] shrink-0 mt-0.5" />
                       <span>{plan.monthlyReporting}</span>
                     </div>
                   </div>
@@ -185,7 +185,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                     }
                     className={`w-full font-extrabold text-sm py-3 px-4 rounded-xl shadow-xs transition-all flex items-center justify-center gap-2 ${
                       isPopular
-                        ? 'bg-[#a67c52] hover:bg-[#8e653d] text-white'
+                        ? 'bg-[#6aaed9] hover:bg-[#4f97c6] text-white'
                         : 'bg-stone-900 hover:bg-stone-800 text-white'
                     }`}
                   >
@@ -204,7 +204,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
         </div>
 
         {/* Add-On Services Block (Reach Out option instead of Add to Plan) */}
-        <div className="bg-white border border-[#e8e2d8] rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
+        <div className="bg-white border border-[#dceaf3] rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-stone-100 pb-4">
             <div>
               <h3 className="text-xl font-black text-stone-900">Custom SEO Add-On Upgrades</h3>
@@ -214,7 +214,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
             </div>
             <button
               onClick={() => onOpenReachOut('Custom Add-On Package Inquiry')}
-              className="bg-[#f7efe3] hover:bg-[#ebdcc8] text-[#6e4d2f] font-bold text-xs px-4 py-2 rounded-xl border border-[#e8dac8] transition-colors shrink-0 flex items-center gap-2"
+              className="bg-[#eef7fc] hover:bg-[#daeef8] text-[#3a6b87] font-bold text-xs px-4 py-2 rounded-xl border border-[#d8ecf7] transition-colors shrink-0 flex items-center gap-2"
             >
               <MessageSquare className="w-3.5 h-3.5" />
               <span>Reach Out For Custom Add-Ons</span>
@@ -223,11 +223,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {ADD_ONS.map((addon) => (
-              <div key={addon.id} className="bg-[#faf8f5] border border-[#e8e2d8] p-4 rounded-2xl flex flex-col justify-between space-y-3">
+              <div key={addon.id} className="bg-[#f5fbfe] border border-[#dceaf3] p-4 rounded-2xl flex flex-col justify-between space-y-3">
                 <div>
                   <div className="flex justify-between items-start gap-2 mb-1">
                     <span className="font-extrabold text-stone-900 text-sm">{addon.name}</span>
-                    <span className="text-xs font-black text-[#a67c52] bg-white px-2 py-0.5 rounded border border-[#e8dac8]">
+                    <span className="text-xs font-black text-[#6aaed9] bg-white px-2 py-0.5 rounded border border-[#d8ecf7]">
                       ${addon.price}/{addon.unit}
                     </span>
                   </div>
@@ -236,9 +236,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
 
                 <button
                   onClick={() => onOpenReachOut(`Add-On Request: ${addon.name} ($${addon.price}/${addon.unit})`)}
-                  className="w-full bg-white hover:bg-stone-50 border border-[#e8e2d8] text-stone-800 text-xs font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-2xs"
+                  className="w-full bg-white hover:bg-stone-50 border border-[#dceaf3] text-stone-800 text-xs font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-2xs"
                 >
-                  <MessageSquare className="w-3.5 h-3.5 text-[#a67c52]" />
+                  <MessageSquare className="w-3.5 h-3.5 text-[#6aaed9]" />
                   <span>Reach Out About This</span>
                 </button>
               </div>
@@ -247,7 +247,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
         </div>
 
         {/* Support Footer Banner */}
-        <div className="bg-[#f7efe3] border border-[#e8dac8] p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4 text-stone-800">
+        <div className="bg-[#eef7fc] border border-[#d8ecf7] p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-4 text-stone-800">
           <div className="space-y-1 text-center sm:text-left">
             <div className="font-extrabold text-stone-900 text-sm">Need a custom enterprise quote or have specific questions?</div>
             <div className="text-xs text-stone-600">
@@ -257,7 +257,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
 
           <button
             onClick={() => onOpenReachOut('General Sales Inquiry')}
-            className="bg-[#a67c52] hover:bg-[#8e653d] text-white font-extrabold text-xs px-6 py-3 rounded-xl shadow-xs transition-colors shrink-0"
+            className="bg-[#6aaed9] hover:bg-[#4f97c6] text-white font-extrabold text-xs px-6 py-3 rounded-xl shadow-xs transition-colors shrink-0"
           >
             Contact Sales Team
           </button>
