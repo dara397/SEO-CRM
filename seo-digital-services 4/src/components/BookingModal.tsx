@@ -110,7 +110,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               S
             </div>
             <div>
-              <h3 className="text-lg font-black tracking-tight">Reach Out to SEO Digital Services</h3>
+              <h3 className="text-lg font-black tracking-tight">Reach Out to PGBlueprint</h3>
               <p className="text-xs text-stone-300">Direct Consultation & Custom Quote</p>
             </div>
           </div>
