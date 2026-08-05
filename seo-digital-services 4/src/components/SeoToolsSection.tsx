@@ -34,13 +34,13 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
   };
 
   return (
-    <section className="py-16 bg-[#faf8f5] text-stone-900 border-t border-[#e8e2d8]" id="seo-tools">
+    <section className="py-16 bg-[#f5fbfe] text-stone-900 border-t border-[#dceaf3]" id="seo-tools">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest bg-[#f7efe3] text-[#6e4d2f] border border-[#e8dac8]">
-            <Wrench className="w-3.5 h-3.5 text-[#a67c52]" />
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-widest bg-[#eef7fc] text-[#3a6b87] border border-[#d8ecf7]">
+            <Wrench className="w-3.5 h-3.5 text-[#6aaed9]" />
             SEO TOOLS & STRATEGIC KNOWLEDGE
           </span>
 
@@ -56,15 +56,15 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
         
         {/* Categories Tabs & Tips List with Light Brown Bar Background */}
         <div className="space-y-6">
-          <div className="bg-[#f2e7d8] border border-[#e2d2bd] p-2 rounded-2xl flex flex-wrap items-center gap-1.5 shadow-2xs">
+          <div className="bg-[#e6f3fa] border border-[#cbe3f1] p-2 rounded-2xl flex flex-wrap items-center gap-1.5 shadow-2xs">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all ${
                   selectedCategory === cat
-                    ? 'bg-white text-[#a67c52] shadow-sm border border-[#d2c2b0]'
-                    : 'text-[#503721] hover:bg-white/60'
+                    ? 'bg-white text-[#6aaed9] shadow-sm border border-[#b8d7e9]'
+                    : 'text-[#244a61] hover:bg-white/60'
                 }`}
               >
                 {cat}
@@ -74,9 +74,9 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {filteredTips.map((tip) => (
-              <div key={tip.id} className="bg-white border border-[#e8e2d8] rounded-2xl p-6 space-y-4 shadow-xs hover:border-[#a67c52] transition-all">
+              <div key={tip.id} className="bg-white border border-[#dceaf3] rounded-2xl p-6 space-y-4 shadow-xs hover:border-[#6aaed9] transition-all">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#6e4d2f] bg-[#f7efe3] px-2.5 py-1 rounded-md border border-[#e8dac8]">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#3a6b87] bg-[#eef7fc] px-2.5 py-1 rounded-md border border-[#d8ecf7]">
                     {tip.category}
                   </span>
                   <span className={`text-[10px] font-extrabold px-2 py-0.5 rounded ${
@@ -94,7 +94,7 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
                   <ul className="space-y-1.5 text-xs text-stone-600">
                     {tip.steps.map((step, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <span className="text-[#a67c52] font-bold">•</span>
+                        <span className="text-[#6aaed9] font-bold">•</span>
                         <span>{step}</span>
                       </li>
                     ))}
@@ -104,7 +104,7 @@ export const SeoToolsSection: React.FC<SeoToolsSectionProps> = ({
                 <div className="pt-2">
                   <button
                     onClick={() => onOpenReachOut(`Question about ${tip.title}`)}
-                    className="text-xs font-extrabold text-[#a67c52] hover:underline flex items-center gap-1"
+                    className="text-xs font-extrabold text-[#6aaed9] hover:underline flex items-center gap-1"
                   >
                     <span>Need help applying this? Reach out</span>
                     <ArrowRight className="w-3.5 h-3.5" />
