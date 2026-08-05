@@ -9,7 +9,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) => {
   return (
-    <footer className="bg-[#231e1a] text-stone-300 border-t border-stone-800 pt-12 pb-8">
+    <footer className="bg-[#1b2730] text-stone-300 border-t border-stone-800 pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-stone-800">
@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#a67c52] text-white flex items-center justify-center font-extrabold text-lg shadow-sm">
+              <div className="w-10 h-10 rounded-xl bg-[#6aaed9] text-white flex items-center justify-center font-extrabold text-lg shadow-sm">
                 P
               </div>
               <span className="text-xl font-black text-white tracking-tight">
@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
 
           {/* Quick Navigation */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-wider text-[#e0b589]">Navigation</h4>
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#b9dcf2]">Navigation</h4>
             <ul className="space-y-2 text-xs">
               <li>
                 <button
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
               <li>
                 <button
                   onClick={() => setActiveTab('what-is-seo')}
-                  className="hover:text-white transition-colors flex items-center gap-1 text-[#e0b589]"
+                  className="hover:text-white transition-colors flex items-center gap-1 text-[#b9dcf2]"
                 >
                   <span>What is SEO?</span>
                   <ArrowUpRight className="w-3 h-3" />
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
               <li>
                 <button
                   onClick={() => setActiveTab('services')}
-                  className="hover:text-white transition-colors flex items-center gap-1 text-[#e0b589]"
+                  className="hover:text-white transition-colors flex items-center gap-1 text-[#b9dcf2]"
                 >
                   <span>SEO Services</span>
                   <ArrowUpRight className="w-3 h-3" />
@@ -114,7 +114,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
 
           {/* Direct Contact Box */}
           <div className="md:col-span-4 space-y-3 bg-stone-900/80 p-5 rounded-2xl border border-stone-800">
-            <h4 className="text-xs font-black uppercase tracking-wider text-[#e0b589]">Direct Client Support</h4>
+            <h4 className="text-xs font-black uppercase tracking-wider text-[#b9dcf2]">Direct Client Support</h4>
             
             <p className="text-xs text-stone-400 leading-relaxed">
               Have questions about our agency packages or need a custom strategy? Connect with an SEO strategist directly via our secure form.
@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
 
             <button
               onClick={() => onOpenReachOut('Footer Direct Consultation')}
-              className="w-full mt-2 bg-[#a67c52] hover:bg-[#8e653d] text-white font-extrabold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-2"
+              className="w-full mt-2 bg-[#6aaed9] hover:bg-[#4f97c6] text-white font-extrabold text-xs py-2.5 rounded-xl transition-all flex items-center justify-center gap-2"
             >
               <MessageSquare className="w-3.5 h-3.5" />
               <span>Reach Out Form</span>
