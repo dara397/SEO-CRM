@@ -96,7 +96,7 @@ export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
           <div className="relative rounded-2xl overflow-hidden border border-[#e8e2d8] shadow-lg group bg-stone-900">
             <img
               src={dashboardImg}
-              alt="SEO Digital Services Analytics Dashboard showing Organic Traffic 25.4K and Key Organic Metrics"
+              alt="PGBlueprint Analytics Dashboard showing Organic Traffic 25.4K and Key Organic Metrics"
               className="w-full h-auto object-cover max-h-[480px] opacity-95 group-hover:opacity-100 transition-opacity"
               referrerPolicy="no-referrer"
             />
@@ -178,7 +178,7 @@ export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
 
                   <div className="space-y-2">
                     <span className="font-extrabold text-stone-900 block text-xs uppercase tracking-wider">
-                      How SEO Digital Services Optimizes It:
+                      How PGBlueprint Optimizes It:
                     </span>
                     <p className="text-stone-600 leading-relaxed bg-white p-4 rounded-xl border border-[#e8e2d8]">
                       {activeMetric.howWeOptimize}
