@@ -28,11 +28,11 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-3 text-left focus:outline-none group"
           >
             <div className="w-10 h-10 rounded-xl bg-[#a67c52] text-white flex items-center justify-center font-extrabold text-lg shadow-sm group-hover:bg-[#8e653d] transition-colors">
-              S
+              P
             </div>
             <div>
               <span className="text-xl font-black text-stone-900 tracking-tight block leading-none">
-                SEO Digital Services
+                PGBlueprint
               </span>
               <span className="text-[11px] font-bold text-[#a67c52] tracking-widest uppercase block mt-1">
                 Organic Search Visibility
