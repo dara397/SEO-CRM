@@ -122,7 +122,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-stone-900 flex flex-col font-sans selection:bg-[#8c5e38] selection:text-white">
+    <div className="min-h-screen bg-[#f5fbfe] text-stone-900 flex flex-col font-sans selection:bg-[#4f97c6] selection:text-white">
       
       {/* Top Sticky Header */}
       <Header
