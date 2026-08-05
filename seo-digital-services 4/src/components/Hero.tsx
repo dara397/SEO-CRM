@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({
             {/* Single Clean Tag Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#f2e7d8] text-[#6e4d2f] border border-[#e2d2bd] shadow-2xs">
               <Sparkles className="w-3.5 h-3.5 text-[#a67c52]" />
-              <span>SEO DIGITAL SERVICES AGENCY</span>
+              <span>PGBLUEPRINT AGENCY</span>
             </div>
 
             {/* Main Headline */}
