@@ -18,10 +18,10 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#a67c52] text-white flex items-center justify-center font-extrabold text-lg shadow-sm">
-                S
+                P
               </div>
               <span className="text-xl font-black text-white tracking-tight">
-                SEO Digital Services
+                PGBlueprint
               </span>
             </div>
 
@@ -134,7 +134,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
         {/* Copyright */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-stone-500">
           <div>
-            © {new Date().getFullYear()} SEO Digital Services. All rights reserved.
+            © {new Date().getFullYear()} PGBlueprint. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <span className="hover:text-stone-400 cursor-pointer">Privacy Policy</span>
