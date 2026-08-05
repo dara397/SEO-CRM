@@ -31,7 +31,7 @@ export const WHAT_IS_SEO_TOPICS: WhatIsSeoTopic[] = [
     id: 'tools',
     title: 'Modern SEO Tools & Technical Analytics',
     subtitle: 'Core Web Vitals, Schema JSON-LD, and Automated Diagnostics',
-    description: 'Modern search engines prioritize speed, mobile responsiveness, and clean semantic code. Utilizing advanced SEO tools allows SEO Digital Services to perform technical audits, track rank positions, eliminate Core Web Vitals bottlenecks, and embed Schema.org structured data for rich search snippets.',
+    description: 'Modern search engines prioritize speed, mobile responsiveness, and clean semantic code. Utilizing advanced SEO tools allows PGBlueprint to perform technical audits, track rank positions, eliminate Core Web Vitals bottlenecks, and embed Schema.org structured data for rich search snippets.',
     keywords: ['seo tools', 'technical audit', 'core web vitals', 'schema json-ld', 'rank tracking'],
     benefits: [
       'Sub-second page loading speeds compliant with Google’s Core Web Vitals',
@@ -69,7 +69,7 @@ export const BUSINESS_BENEFITS = [
   {
     number: '03',
     title: 'Google Organic Search Health Compliance',
-    description: 'Google frequently updates ranking algorithms. SEO Digital Services maintains strict organic health standards so your site stays compliant, safe, and protected against penalties.'
+    description: 'Google frequently updates ranking algorithms. PGBlueprint maintains strict organic health standards so your site stays compliant, safe, and protected against penalties.'
   },
   {
     number: '04',
