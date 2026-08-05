@@ -20,12 +20,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, 
   };
 
   return (
-    <div className="bg-[#faf8f5]">
+    <div className="bg-[#f5fbfe]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-16 pb-10 text-center">
-        <span className="inline-block text-[11px] font-black uppercase tracking-widest text-[#8c5e38] bg-[#f2e7d8] border border-[#e2d2bd] rounded-full px-4 py-1.5 mb-5">
+        <span className="inline-block text-[11px] font-black uppercase tracking-widest text-[#4f97c6] bg-[#e6f3fa] border border-[#cbe3f1] rounded-full px-4 py-1.5 mb-5">
           {data.kicker}
         </span>
         <h1 className="text-4xl sm:text-5xl font-black text-stone-900 leading-tight mb-5">{data.h1}</h1>
@@ -33,7 +33,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, 
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           <button
             onClick={() => onOpenReachOut(data.ctaSubject)}
-            className="bg-[#a67c52] hover:bg-[#8c5e38] text-white font-bold px-6 py-3 rounded-xl transition-colors flex items-center gap-2"
+            className="bg-[#6aaed9] hover:bg-[#4f97c6] text-white font-bold px-6 py-3 rounded-xl transition-colors flex items-center gap-2"
           >
             <MessageSquare className="w-4 h-4" />
             {data.ctaLabel}
@@ -52,8 +52,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {data.stats.map((s) => (
-            <div key={s.label} className="bg-white border border-[#e2d2bd] rounded-2xl p-6 text-center shadow-sm">
-              <div className="text-3xl font-black text-[#8c5e38]">{s.value}</div>
+            <div key={s.label} className="bg-white border border-[#cbe3f1] rounded-2xl p-6 text-center shadow-sm">
+              <div className="text-3xl font-black text-[#4f97c6]">{s.value}</div>
               <div className="text-xs text-stone-500 mt-2 leading-snug">{s.label}</div>
             </div>
           ))}
@@ -81,9 +81,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, 
           {data.deliverables.map((d) => (
             <li
               key={d}
-              className="flex items-start gap-2.5 bg-white border border-[#e2d2bd] rounded-xl p-4 text-sm text-stone-700"
+              className="flex items-start gap-2.5 bg-white border border-[#cbe3f1] rounded-xl p-4 text-sm text-stone-700"
             >
-              <CheckCircle2 className="w-4 h-4 text-[#a67c52] mt-0.5 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#6aaed9] mt-0.5 shrink-0" />
               <span>{d}</span>
             </li>
           ))}
@@ -95,7 +95,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, 
         <h2 className="text-2xl font-black text-stone-900 mb-5">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {data.faqs.map((f) => (
-            <div key={f.q} className="bg-white border border-[#e2d2bd] rounded-2xl p-6">
+            <div key={f.q} className="bg-white border border-[#cbe3f1] rounded-2xl p-6">
               <h3 className="font-bold text-stone-900 mb-2">{f.q}</h3>
               <p className="text-sm text-stone-600 leading-relaxed">{f.a}</p>
             </div>
@@ -104,7 +104,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, 
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-[#231e1a] py-14">
+      <section className="bg-[#1b2730] py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">{data.bottomCtaHeading}</h2>
           <p className="text-stone-400 text-sm mb-6">
@@ -112,7 +112,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, 
           </p>
           <button
             onClick={() => onOpenReachOut(data.ctaSubject)}
-            className="bg-[#a67c52] hover:bg-[#8c5e38] text-white font-bold px-7 py-3 rounded-xl transition-colors"
+            className="bg-[#6aaed9] hover:bg-[#4f97c6] text-white font-bold px-7 py-3 rounded-xl transition-colors"
           >
             Request Free Audit
           </button>
