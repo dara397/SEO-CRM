@@ -1,3 +1,1 @@
-{
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
-}
+{ "trailingSlash": false, "rewrites": [{ "source": "/what-is-seo", "destination": "/index.html" }, { "source": "/services", "destination": "/index.html" }, { "source": "/pricing", "destination": "/index.html" }, { "source": "/seo-tools", "destination": "/index.html" }, { "source": "/local-seo-services", "destination": "/index.html" }, { "source": "/link-building-services", "destination": "/index.html" }, { "source": "/lead-generation-services", "destination": "/index.html" }] }
