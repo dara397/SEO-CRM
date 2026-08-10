@@ -10,30 +10,7 @@ import { Footer } from './components/Footer';
 import { LandingPage } from './components/LandingPage';
 import { LANDING_PAGES } from './data/landingPages';
 import { ActiveTab } from './types';
-
-
-// --- URL routing: each page gets a real URL ---
-const TAB_PATHS: Record<ActiveTab, string> = {
-  'preview': '/',
-  'what-is-seo': '/what-is-seo',
-  'services': '/services',
-  'pricing': '/pricing',
-  'seo-tools': '/seo-tools',
-  'local-seo': '/local-seo-services',
-  'link-building': '/link-building-services',
-  'lead-generation': '/lead-generation-services',
-};
-
-const PATH_TABS: Record<string, ActiveTab> = {
-  '/': 'preview',
-  '/what-is-seo': 'what-is-seo',
-  '/services': 'services',
-  '/pricing': 'pricing',
-  '/seo-tools': 'seo-tools',
-  '/local-seo-services': 'local-seo',
-  '/link-building-services': 'link-building',
-  '/lead-generation-services': 'lead-generation',
-};
+import { TAB_PATHS, PATH_TABS, SITE_ORIGIN } from './routes';
 
 const PAGE_TITLES: Record<ActiveTab, string> = {
   'preview': 'PGBlueprint | Organic Search Visibility & SEO Agency',
@@ -57,8 +34,6 @@ const PAGE_DESCRIPTIONS: Record<ActiveTab, string> = {
   'link-building': 'White-hat link building services with DR 40+ editorial backlinks, competitor gap analysis, and transparent reporting. Build the authority page 1 rankings require.',
   'lead-generation': 'SEO lead generation services that turn organic search into exclusive, trackable leads with call tracking, conversion pages, and high-intent keyword targeting.',
 };
-
-const SITE_ORIGIN = 'https://www.pgblueprint.com';
 
 const tabFromPath = (): ActiveTab => {
   const path = window.location.pathname.replace(/\/+$/, '') || '/';
