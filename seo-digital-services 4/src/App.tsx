@@ -11,37 +11,28 @@ import { LandingPage } from './components/LandingPage';
 import { LANDING_PAGES } from './data/landingPages';
 import { ActiveTab } from './types';
 import { TAB_PATHS, PATH_TABS, SITE_ORIGIN } from './routes';
+import { PAGE_TITLES, PAGE_DESCRIPTIONS } from './seo';
 
-const PAGE_TITLES: Record<ActiveTab, string> = {
-  'preview': 'PGBlueprint | Organic Search Visibility & SEO Agency',
-  'what-is-seo': 'What is SEO & Why Your Business Needs It | PGBlueprint',
-  'services': 'SEO Services & Search Engine Optimization | PGBlueprint',
-  'pricing': 'SEO Service Packages & Pricing | PGBlueprint',
-  'seo-tools': 'SEO Tools, Strategies & Best Practices | PGBlueprint',
-  'local-seo': 'Local SEO Services & Google Map Pack Optimization | PGBlueprint',
-  'link-building': 'Link Building Services & High-Authority Backlinks | PGBlueprint',
-  'lead-generation': 'SEO Lead Generation Services | PGBlueprint',
-};
-
-
-const PAGE_DESCRIPTIONS: Record<ActiveTab, string> = {
-  'preview': 'PGBlueprint is an organic search engine optimization agency delivering keyword strategy, technical audits, high-authority backlinks, and Page 1 Google rankings.',
-  'what-is-seo': 'Learn how search engine optimization works, why organic rankings drive continuous business growth, and how PGBlueprint maximizes your Google search visibility.',
-  'services': 'High-impact SEO services: managed campaigns, local SEO, technical audits, high-authority backlinks, ecommerce SEO, and AI search visibility.',
-  'pricing': 'Transparent SEO packages: Starter $997/mo, Growth $1,497/mo, or competitively priced custom plans. 3-month minimum commitment.',
-  'seo-tools': 'Curated SEO strategies, tips, and diagnostic tools to boost your Google ranking and organic search visibility.',
-  'local-seo': 'Local SEO services that rank your business in the Google Map Pack: Google Business Profile optimization, 150+ local citations, and review generation from $997/mo.',
-  'link-building': 'White-hat link building services with DR 40+ editorial backlinks, competitor gap analysis, and transparent reporting. Build the authority page 1 rankings require.',
-  'lead-generation': 'SEO lead generation services that turn organic search into exclusive, trackable leads with call tracking, conversion pages, and high-intent keyword targeting.',
-};
-
-const tabFromPath = (): ActiveTab => {
-  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+/**
+ * Resolve the active tab from a pathname.
+ *
+ * Takes the path as an argument (instead of reading window.location directly)
+ * so the same component can render on the server during prerendering, where
+ * there is no window object.
+ */
+const tabFromPath = (pathname?: string): ActiveTab => {
+  const raw = pathname ?? (typeof window !== 'undefined' ? window.location.pathname : '/');
+  const path = raw.replace(/\/+$/, '') || '/';
   return PATH_TABS[path] ?? 'preview';
 };
 
-export default function App() {
-  const [activeTab, setActiveTabState] = useState<ActiveTab>(tabFromPath);
+interface AppProps {
+  /** Set by the prerenderer; on the client the URL bar is the source of truth. */
+  initialPath?: string;
+}
+
+export default function App({ initialPath }: AppProps = {}) {
+  const [activeTab, setActiveTabState] = useState<ActiveTab>(() => tabFromPath(initialPath));
   const [isReachOutOpen, setIsReachOutOpen] = useState(false);
   const [reachOutSubject, setReachOutSubject] = useState('General Inquiry');
 
@@ -58,6 +49,7 @@ export default function App() {
   // Handle browser back/forward buttons
   useEffect(() => {
     const onPopState = () => setActiveTabState(tabFromPath());
+
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
