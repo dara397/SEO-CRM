@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, MessageSquare, ArrowRight } from 'lucide-react';
+import { Phone, MapPin, Clock, MessageSquare, ArrowRight } from 'lucide-react';
 import { ActiveTab } from '../types';
 import { navLinkProps } from '../navLink';
 import { BUSINESS, SERVICE_AREAS, REGION } from '../data/business';
@@ -55,7 +55,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({ setActiveTab, onOpenRe
       name: BUSINESS.name,
       url: BUSINESS.url,
       telephone: BUSINESS.telephone,
-      email: BUSINESS.email,
       priceRange: '$$',
       address: {
         '@type': 'PostalAddress',
@@ -68,7 +67,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({ setActiveTab, onOpenRe
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: BUSINESS.telephone,
-        email: BUSINESS.email,
         contactType: 'sales',
         areaServed: 'US',
         availableLanguage: ['English'],
@@ -149,15 +147,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({ setActiveTab, onOpenRe
                     className="text-lg font-black text-[#4f97c6] hover:underline"
                   >
                     {BUSINESS.telephoneDisplay}
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-[#6aaed9] mt-1 shrink-0" />
-                <div>
-                  <div className="text-[11px] font-black uppercase tracking-wider text-stone-500">Email</div>
-                  <a href={`mailto:${BUSINESS.email}`} className="text-stone-700 hover:underline">
-                    {BUSINESS.email}
                   </a>
                 </div>
               </li>
