@@ -14,7 +14,6 @@ export const BUSINESS = {
   /** Human-readable — the format every citation should use, verbatim. */
   telephoneDisplay: '(949) 878-1316',
   telephoneHref: 'tel:+19498781316',
-  email: 'contact@pgblueprint.com',
   locality: 'Laguna Niguel',
   region: 'CA',
   postalCode: '92677',
