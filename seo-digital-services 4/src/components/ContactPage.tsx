@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: 'How fast do you respond?',
-    a: 'Calls during business hours are answered live. Form submissions and voicemails get a reply the same business day. If we cannot hit that, we have no business selling anyone lead response times.',
+    a: 'We answer the phone around the clock, including evenings and weekends. Form submissions and voicemails get a reply the same business day. If we cannot hit that, we have no business selling anyone lead response times.',
   },
   {
     q: 'What does it cost to start?',
@@ -107,7 +107,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ setActiveTab, onOpenRe
         </h1>
         <p className="text-stone-600 text-lg leading-relaxed max-w-2xl mx-auto">
           Free audit, no obligation, and a straight answer about whether we can help. Calling is
-          fastest &mdash; we answer during business hours.
+          fastest &mdash; someone answers around the clock.
         </p>
 
         <div className="mt-8">
