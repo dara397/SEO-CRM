@@ -8,6 +8,7 @@ import { SeoToolsSection } from './components/SeoToolsSection';
 import { BookingModal } from './components/BookingModal';
 import { Footer } from './components/Footer';
 import { LandingPage } from './components/LandingPage';
+import { ContactPage } from './components/ContactPage';
 import { LANDING_PAGES } from './data/landingPages';
 import { ActiveTab } from './types';
 import { TAB_PATHS, PATH_TABS, SITE_ORIGIN } from './routes';
@@ -122,6 +123,7 @@ export default function App({ initialPath }: AppProps = {}) {
           <SeoServicesSection
             onGoToPackages={() => setActiveTab('pricing')}
             onOpenReachOut={handleOpenReachOut}
+            setActiveTab={setActiveTab}
           />
         )}
 
@@ -144,6 +146,7 @@ export default function App({ initialPath }: AppProps = {}) {
             data={LANDING_PAGES['local-seo']}
             onGoToPackages={() => setActiveTab('pricing')}
             onOpenReachOut={handleOpenReachOut}
+            setActiveTab={setActiveTab}
           />
         )}
 
@@ -152,6 +155,7 @@ export default function App({ initialPath }: AppProps = {}) {
             data={LANDING_PAGES['link-building']}
             onGoToPackages={() => setActiveTab('pricing')}
             onOpenReachOut={handleOpenReachOut}
+            setActiveTab={setActiveTab}
           />
         )}
 
@@ -159,6 +163,14 @@ export default function App({ initialPath }: AppProps = {}) {
           <LandingPage
             data={LANDING_PAGES['lead-generation']}
             onGoToPackages={() => setActiveTab('pricing')}
+            onOpenReachOut={handleOpenReachOut}
+            setActiveTab={setActiveTab}
+          />
+        )}
+
+        {activeTab === 'contact' && (
+          <ContactPage
+            setActiveTab={setActiveTab}
             onOpenReachOut={handleOpenReachOut}
           />
         )}

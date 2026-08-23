@@ -17,6 +17,7 @@ export const TAB_PATHS: Record<ActiveTab, string> = {
   'local-seo': '/local-seo-services',
   'link-building': '/link-building-services',
   'lead-generation': '/lead-generation-services',
+  'contact': '/contact',
 };
 
 export const PATH_TABS: Record<string, ActiveTab> = {
@@ -28,6 +29,7 @@ export const PATH_TABS: Record<string, ActiveTab> = {
   '/local-seo-services': 'local-seo',
   '/link-building-services': 'link-building',
   '/lead-generation-services': 'lead-generation',
+  '/contact': 'contact',
 };
 
 export const SITE_ORIGIN = 'https://www.pgblueprint.com';

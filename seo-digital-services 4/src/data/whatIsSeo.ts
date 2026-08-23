@@ -59,7 +59,7 @@ export const BUSINESS_BENEFITS = [
   {
     number: '01',
     title: 'Predictable Inbound Customer Lead Pipeline',
-    description: 'Over 93% of online experiences start with a Google search. Ranking organically on page 1 puts your agency or business directly in front of prospects actively seeking your exact service.'
+    description: 'Most buying journeys start with a search. Ranking organically on page one puts your business in front of people who are already looking for exactly what you sell, at the moment they are looking - which is why organic search converts better than interruption-based channels.'
   },
   {
     number: '02',

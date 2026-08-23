@@ -1,7 +1,8 @@
 import React from 'react';
-import { ShieldCheck, MessageSquare, ArrowUpRight } from 'lucide-react';
+import { ShieldCheck, MessageSquare, ArrowUpRight, Phone } from 'lucide-react';
 import { ActiveTab } from '../types';
 import { TAB_PATHS } from '../routes';
+import { BUSINESS } from '../data/business';
 
 interface FooterProps {
   setActiveTab: (tab: ActiveTab) => void;
@@ -41,6 +42,22 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
               Delivering high-ranking organic search engine optimization campaigns. Compliant with Google's organic health requirements, Core Web Vitals, and mobile responsiveness. Minimum 3-month commitment.
             </p>
 
+            {/* NAP — name, phone, locality. Local ranking systems cross-check
+                this against the Google Business Profile and every citation, so
+                it has to appear in exactly this format everywhere. */}
+            <div className="pt-1 space-y-1.5">
+              <a
+                href={BUSINESS.telephoneHref}
+                className="flex items-center gap-2 text-base font-black text-white hover:text-[#6aaed9] transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#6aaed9]" />
+                {BUSINESS.telephoneDisplay}
+              </a>
+              <p className="text-xs text-stone-400">
+                {BUSINESS.locality}, {BUSINESS.region} {BUSINESS.postalCode} &middot; {BUSINESS.hours}
+              </p>
+            </div>
+
             <div className="pt-1 flex flex-wrap items-center gap-3 text-xs">
               <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -61,6 +78,15 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
                   className="hover:text-white transition-colors"
                 >
                   Home / Overview
+                </a>
+              </li>
+              <li>
+                <a
+                  {...navLinkProps('contact')}
+                  className="hover:text-white transition-colors flex items-center gap-1 text-[#b9dcf2]"
+                >
+                  <span>Contact</span>
+                  <ArrowUpRight className="w-3 h-3" />
                 </a>
               </li>
               <li>

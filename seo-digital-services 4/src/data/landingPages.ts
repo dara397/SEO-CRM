@@ -10,9 +10,9 @@ export const LANDING_PAGES: Record<string, LandingPageData> = {
     ctaLabel: 'Get a Free Local SEO Audit',
     ctaSubject: 'Local SEO Services Inquiry',
     stats: [
-      { value: '46%', label: 'of all Google searches have local intent' },
-      { value: '76%', label: 'of local mobile searches lead to a business visit within 24 hours' },
-      { value: 'Top 3', label: 'Map Pack positions capture the majority of local search clicks' },
+      { value: '150', label: 'local citations built and audited for NAP consistency on the Growth plan' },
+      { value: '60-90', label: 'days before most local businesses see measurable Map Pack movement' },
+      { value: 'Free', label: 'geo-grid audit of your current Map Pack position before you commit' },
     ],
     sections: [
       {
@@ -58,6 +58,23 @@ export const LANDING_PAGES: Record<string, LandingPageData> = {
       },
     ],
     bottomCtaHeading: 'Ready to own your local market?',
+    relatedLinks: [
+      {
+        tab: 'lead-generation',
+        label: 'SEO lead generation',
+        blurb: 'Turn the Map Pack calls into tracked, attributed leads you can actually count.',
+      },
+      {
+        tab: 'link-building',
+        label: 'Link building services',
+        blurb: 'Prominence is driven by links. Local relevance links move Map Pack rankings.',
+      },
+      {
+        tab: 'services',
+        label: 'All SEO services',
+        blurb: 'The full menu, and how the monthly packages combine these into one campaign.',
+      },
+    ],
   },
   'link-building': {
     id: 'link-building',
@@ -68,7 +85,7 @@ export const LANDING_PAGES: Record<string, LandingPageData> = {
     ctaLabel: 'Get a Free Backlink Audit',
     ctaSubject: 'Link Building Services Inquiry',
     stats: [
-      { value: '3.8x', label: 'more backlinks point to the average #1 result than to positions 2-10' },
+      { value: '3.8x', label: 'more referring domains point to the average #1 result than to positions 2-10 (Backlinko, 11.8M-result study)' },
       { value: 'DR 40+', label: 'minimum domain rating for our editorial link placements' },
       { value: '100%', label: 'white-hat manual outreach - never automated or purchased from farms' },
     ],
@@ -116,6 +133,23 @@ export const LANDING_PAGES: Record<string, LandingPageData> = {
       },
     ],
     bottomCtaHeading: 'Ready to build the authority your rankings need?',
+    relatedLinks: [
+      {
+        tab: 'local-seo',
+        label: 'Local SEO services',
+        blurb: 'Citation consistency and Google Business Profile work that links amplify.',
+      },
+      {
+        tab: 'lead-generation',
+        label: 'SEO lead generation',
+        blurb: 'Call tracking, so you can prove the authority you bought produced revenue.',
+      },
+      {
+        tab: 'services',
+        label: 'All SEO services',
+        blurb: 'The full menu, and how the monthly packages combine these into one campaign.',
+      },
+    ],
   },
   'lead-generation': {
     id: 'lead-generation',
@@ -126,8 +160,8 @@ export const LANDING_PAGES: Record<string, LandingPageData> = {
     ctaLabel: 'Get a Free Lead Gen Audit',
     ctaSubject: 'SEO Lead Generation Inquiry',
     stats: [
-      { value: '93%', label: 'of online experiences begin with a search engine' },
-      { value: '14.6%', label: 'average close rate of inbound SEO leads, versus under 2% for cold outreach' },
+      { value: '100%', label: 'of the leads your rankings generate are exclusively yours - never resold' },
+      { value: '30 days', label: 'of call and missed-call data captured before we optimize anything' },
       { value: '24/7', label: 'your rankings capture ready-to-buy searchers around the clock' },
     ],
     sections: [
@@ -174,5 +208,22 @@ export const LANDING_PAGES: Record<string, LandingPageData> = {
       },
     ],
     bottomCtaHeading: 'Ready for a pipeline that fills itself?',
+    relatedLinks: [
+      {
+        tab: 'local-seo',
+        label: 'Local SEO services',
+        blurb: 'Map Pack visibility is where most local high-intent demand actually sits.',
+      },
+      {
+        tab: 'link-building',
+        label: 'Link building services',
+        blurb: 'The authority that makes competitive service pages rank in the first place.',
+      },
+      {
+        tab: 'services',
+        label: 'All SEO services',
+        blurb: 'The full menu, and how the monthly packages combine these into one campaign.',
+      },
+    ],
   },
 };

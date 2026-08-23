@@ -1,5 +1,6 @@
 import React from 'react';
-import { ShieldCheck, Sparkles, Globe, BarChart3, HelpCircle, MessageSquare, Layers } from 'lucide-react';
+import { ShieldCheck, Sparkles, Globe, BarChart3, HelpCircle, MessageSquare, Layers, Phone } from 'lucide-react';
+import { BUSINESS } from '../data/business';
 import { ActiveTab } from '../types';
 import { TAB_PATHS } from '../routes';
 
@@ -114,10 +115,34 @@ export const Header: React.FC<HeaderProps> = ({
               <Sparkles className="w-3.5 h-3.5 text-[#6aaed9]" />
               Tools & Tips
             </a>
+
+            <a
+              {...navLinkProps('contact')}
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all ${
+                activeTab === 'contact'
+                  ? 'bg-white text-[#6aaed9] shadow-sm border border-[#bcd9ea]'
+                  : 'text-[#3a6b87] hover:text-stone-900'
+              }`}
+            >
+              <Phone className="w-3.5 h-3.5 text-[#6aaed9]" />
+              Contact
+            </a>
           </nav>
 
-          {/* Action Reach Out Button */}
+          {/* Action area — phone first. A visible, tappable number on every
+              page is the highest-converting element on a service-business site,
+              and the site previously had none anywhere. */}
           <div className="flex items-center gap-3">
+            <a
+              href={BUSINESS.telephoneHref}
+              aria-label={`Call PGBlueprint on ${BUSINESS.telephoneDisplay}`}
+              className="flex items-center gap-2 text-sm font-extrabold text-stone-900 hover:text-[#4f97c6] transition-colors shrink-0"
+            >
+              <Phone className="w-5 h-5 sm:w-4 sm:h-4 text-[#6aaed9]" />
+              {/* Number is hidden on the narrowest screens for space, but the
+                  tap-to-call target stays — most contractor traffic is mobile. */}
+              <span className="hidden sm:inline">{BUSINESS.telephoneDisplay}</span>
+            </a>
             <button
               onClick={() => onOpenReachOut('General Inquiry')}
               className="bg-[#6aaed9] hover:bg-[#4f97c6] text-white text-xs sm:text-sm font-extrabold px-5 py-2.5 rounded-xl shadow-sm transition-all flex items-center gap-2"
@@ -171,6 +196,14 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           SEO Tools
+        </a>
+        <a
+          {...navLinkProps('contact')}
+          className={`flex-1 min-w-[75px] py-2 text-center text-xs font-bold rounded-lg ${
+            activeTab === 'contact' ? 'bg-white text-[#6aaed9] shadow-xs' : 'text-[#3a6b87]'
+          }`}
+        >
+          Contact
         </a>
       </div>
     </header>

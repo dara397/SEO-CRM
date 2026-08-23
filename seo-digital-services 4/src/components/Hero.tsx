@@ -83,34 +83,50 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-5">
             <div className="bg-white border border-[#dceaf3] rounded-3xl p-6 sm:p-7 shadow-lg space-y-6">
               
-              <div className="flex items-center justify-between border-b border-stone-100 pb-4">
-                <div>
-                  <div className="text-[11px] font-extrabold uppercase tracking-wider text-[#6aaed9]">ORGANIC PERFORMANCE</div>
-                  <div className="text-lg font-black text-stone-900">Live Client Impact Overview</div>
+              <div className="border-b border-stone-100 pb-4">
+                <div className="text-[11px] font-extrabold uppercase tracking-wider text-[#6aaed9]">
+                  HOW WE WORK
                 </div>
-                <span className="text-xs font-extrabold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 flex items-center gap-1">
-                  <TrendingUp className="w-3.5 h-3.5" /> +25.4% Growth
-                </span>
+                <div className="text-lg font-black text-stone-900">What you get in the first 30 days</div>
               </div>
 
-              {/* 3 Metric Highlights */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {/*
+                Replaced the "Live Client Impact Overview" tiles (25.4K traffic,
+                +4.12% MoM, 2,200+ keywords, 85% health).
+
+                Those numbers were presented as live client results with no
+                client, no date range and no source tool attached. Performance
+                claims in advertising have to be substantiable, and practically:
+                any prospect can check this domain's own visibility in thirty
+                seconds and the pitch is over.
+
+                If they are real client figures, put them back WITH the client
+                named, the date range, and the tool they came from — and with
+                that client's written permission.
+              */}
+              <div className="space-y-3">
                 <div className="bg-[#f5fbfe] p-3.5 rounded-2xl border border-[#dceaf3]">
-                  <div className="text-[10px] font-bold text-stone-500 uppercase">Organic Traffic</div>
-                  <div className="text-lg font-black text-stone-900 mt-0.5">25.4K</div>
-                  <div className="text-[10px] font-bold text-emerald-600 mt-0.5">+4.12% MoM</div>
+                  <div className="text-[10px] font-bold text-stone-500 uppercase">Week 1</div>
+                  <div className="text-sm font-black text-stone-900 mt-0.5">Measurement goes in first</div>
+                  <div className="text-[11px] text-stone-600 mt-1">
+                    Call tracking, form analytics and a rank baseline, before we change anything.
+                  </div>
                 </div>
 
                 <div className="bg-[#f5fbfe] p-3.5 rounded-2xl border border-[#dceaf3]">
-                  <div className="text-[10px] font-bold text-stone-500 uppercase">Keywords</div>
-                  <div className="text-lg font-black text-stone-900 mt-0.5">2,200+</div>
-                  <div className="text-[10px] font-bold text-emerald-600 mt-0.5">+9.8% Top 10</div>
+                  <div className="text-[10px] font-bold text-stone-500 uppercase">Week 2</div>
+                  <div className="text-sm font-black text-stone-900 mt-0.5">Competitor and gap audit</div>
+                  <div className="text-[11px] text-stone-600 mt-1">
+                    Where you rank against your three closest competitors, and what is missing.
+                  </div>
                 </div>
 
                 <div className="bg-[#f5fbfe] p-3.5 rounded-2xl border border-[#dceaf3]">
-                  <div className="text-[10px] font-bold text-stone-500 uppercase">Site Health</div>
-                  <div className="text-lg font-black text-stone-900 mt-0.5">85%</div>
-                  <div className="text-[10px] font-bold text-stone-600 mt-0.5">0 Errors</div>
+                  <div className="text-[10px] font-bold text-stone-500 uppercase">Day 30</div>
+                  <div className="text-sm font-black text-stone-900 mt-0.5">Your real numbers, not ours</div>
+                  <div className="text-[11px] text-stone-600 mt-1">
+                    Calls received, calls missed, and where the inquiries actually came from.
+                  </div>
                 </div>
               </div>
 
