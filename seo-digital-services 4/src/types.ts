@@ -1,4 +1,18 @@
-export type ActiveTab = 'preview' | 'what-is-seo' | 'services' | 'pricing' | 'seo-tools' | 'local-seo' | 'link-building' | 'lead-generation';
+export type ActiveTab = 'preview' | 'what-is-seo' | 'services' | 'pricing' | 'seo-tools' | 'local-seo' | 'link-building' | 'lead-generation' | 'contact';
+
+/**
+ * A contextual in-body link from one page to another.
+ *
+ * Added because LandingPageData previously had no way to express an internal
+ * link, which is why the three service landing pages were reachable only from
+ * the footer. Footer links carry very little weight; a descriptive in-body
+ * link from a topically related page carries real weight.
+ */
+export interface RelatedLink {
+  tab: ActiveTab;
+  label: string;
+  blurb: string;
+}
 
 export interface LandingPageData {
   id: string;
@@ -13,6 +27,8 @@ export interface LandingPageData {
   deliverables: string[];
   faqs: { q: string; a: string }[];
   bottomCtaHeading: string;
+  /** Contextual links to sibling pages, rendered above the bottom CTA. */
+  relatedLinks?: RelatedLink[];
 }
 
 export interface PackagePlan {
