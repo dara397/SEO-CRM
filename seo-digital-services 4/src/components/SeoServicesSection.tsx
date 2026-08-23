@@ -1,17 +1,35 @@
 import React, { useState } from 'react';
 import { Globe, MapPin, Cpu, Link, ShoppingCart, Sparkles, Search, TrendingUp, ShieldCheck, CheckCircle2, ArrowRight, MessageSquare, BarChart2, HelpCircle, Layers, Activity, Database, AlertCircle } from 'lucide-react';
 import { SEO_SERVICES_LIST, TOP_VOLUME_KEYWORDS, DASHBOARD_METRICS_EXPLANATIONS } from '../data/seoServices';
-import { SeoServiceItem, DashboardMetricHighlight } from '../types';
+import { ActiveTab, SeoServiceItem, DashboardMetricHighlight } from '../types';
+import { navLinkProps } from '../navLink';
 import dashboardImg from '../assets/images/seo_analytics_dashboard_1785176774757.jpg';
 
 interface SeoServicesSectionProps {
   onGoToPackages: () => void;
   onOpenReachOut: (serviceTitle?: string) => void;
+  setActiveTab: (tab: ActiveTab) => void;
 }
+
+/**
+ * Service cards whose id maps to a dedicated landing page.
+ *
+ * Before this, /services linked to those three pages only from the footer, so
+ * the single most natural contextual link on the site did not exist: the card
+ * describing Local SEO had no link to the Local SEO page. Descriptive-anchor
+ * in-body links from a topically matched card carry far more weight than a
+ * footer list.
+ */
+const SERVICE_LANDING_PAGES: Record<string, { tab: ActiveTab; anchor: string }> = {
+  'local-seo': { tab: 'local-seo', anchor: 'local SEO services' },
+  'link-building': { tab: 'link-building', anchor: 'link building services' },
+  'lead-generation': { tab: 'lead-generation', anchor: 'SEO lead generation services' },
+};
 
 export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
   onGoToPackages,
   onOpenReachOut,
+  setActiveTab,
 }) => {
   const [selectedServiceCategory, setSelectedServiceCategory] = useState<string>('All');
   const [activeMetricId, setActiveMetricId] = useState<string>('organic-traffic');
@@ -79,7 +97,7 @@ export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
                 Understanding Key Organic Analytics & Performance Metrics
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 mt-1">
-                Every client receives access to our comprehensive real-time SEO dashboard. Click any key metric below to see its exact business importance and how our SEO services optimize it.
+                Every client gets a live reporting dashboard. Below is what we track on it and why each metric matters to your revenue - click any one to see how we move it.
               </p>
             </div>
 
@@ -96,28 +114,28 @@ export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
           <div className="relative rounded-2xl overflow-hidden border border-[#dceaf3] shadow-lg group bg-stone-900">
             <img
               src={dashboardImg}
-              alt="PGBlueprint Analytics Dashboard showing Organic Traffic 25.4K and Key Organic Metrics"
+              alt="The PGBlueprint client reporting dashboard interface, shown with sample data"
               className="w-full h-auto object-cover max-h-[480px] opacity-95 group-hover:opacity-100 transition-opacity"
               referrerPolicy="no-referrer"
             />
 
-            {/* Overlay Badges on Image highlighting Key Importance */}
-            <div className="absolute top-4 left-4 bg-stone-900/90 text-white p-3 rounded-xl backdrop-blur-md border border-stone-700 max-w-xs space-y-1 shadow-md hidden sm:block">
-              <div className="text-[10px] font-mono text-[#b9dcf2] font-bold uppercase tracking-widest flex items-center gap-1">
-                <CheckCircle2 className="w-3 h-3 text-emerald-400" /> Key Metric #1
+            {/* Sample-data label.
+
+                The figures visible in this screenshot are sample data, not
+                client results. Labelling it is not optional: an unlabelled
+                dashboard screenshot on an agency site reads as a performance
+                claim, and performance claims have to be substantiable. */}
+            <div className="absolute top-4 left-4 bg-stone-900/90 text-white px-3 py-2 rounded-xl backdrop-blur-md border border-stone-700 shadow-md">
+              <div className="text-[10px] font-mono text-[#b9dcf2] font-bold uppercase tracking-widest">
+                Sample dashboard - illustrative data
               </div>
-              <div className="text-xs font-black text-white">Organic Traffic: 25.4K (+4.12%)</div>
-              <div className="text-[11px] text-stone-300">Revenue-generating organic visitors from Google</div>
             </div>
 
-            <div className="absolute bottom-4 right-4 bg-stone-900/90 text-white p-3 rounded-xl backdrop-blur-md border border-stone-700 max-w-xs space-y-1 shadow-md hidden sm:block">
-              <div className="text-[10px] font-mono text-[#b9dcf2] font-bold uppercase tracking-widest flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-emerald-400" /> Key Metric #2
-              </div>
-              <div className="text-xs font-black text-white">Site Audit Health: 85% Health Score</div>
-              <div className="text-[11px] text-stone-300">0 Critical errors • Full Core Web Vitals speed</div>
-            </div>
           </div>
+          <p className="text-[11px] text-stone-500 -mt-4">
+            Screenshot shows the reporting interface with sample data. Your dashboard shows your
+            own numbers from day one.
+          </p>
 
           {/* Interactive Metric Importance Selector */}
           <div className="space-y-4">
@@ -311,8 +329,17 @@ export const SeoServicesSection: React.FC<SeoServicesSectionProps> = ({
 
                 </div>
 
-                {/* Reach Out Button specifically targeting this service */}
-                <div className="pt-2 border-t border-stone-100">
+                {/* Contextual link to this service's landing page, then the CTA. */}
+                <div className="pt-2 border-t border-stone-100 space-y-2">
+                  {SERVICE_LANDING_PAGES[service.id] && (
+                    <a
+                      {...navLinkProps(SERVICE_LANDING_PAGES[service.id].tab, setActiveTab)}
+                      className="w-full bg-white border border-[#cbe3f1] hover:border-[#6aaed9] text-[#4f97c6] font-extrabold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-2"
+                    >
+                      <span>{`More about ${SERVICE_LANDING_PAGES[service.id].anchor}`}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                   <button
                     onClick={() => onOpenReachOut(`Inquiry for ${service.title}`)}
                     className="w-full bg-[#6aaed9] hover:bg-[#4f97c6] text-white font-extrabold text-xs py-3 rounded-xl shadow-xs transition-all flex items-center justify-center gap-2"
