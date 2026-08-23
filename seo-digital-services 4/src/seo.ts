@@ -20,6 +20,7 @@ export const PAGE_TITLES: Record<ActiveTab, string> = {
   'local-seo': 'Local SEO Services & Google Map Pack Optimization | PGBlueprint',
   'link-building': 'Link Building Services & High-Authority Backlinks | PGBlueprint',
   'lead-generation': 'SEO Lead Generation Services | PGBlueprint',
+  'contact': 'Contact PGBlueprint | Call (949) 878-1316',
 };
 
 export const PAGE_DESCRIPTIONS: Record<ActiveTab, string> = {
@@ -31,6 +32,7 @@ export const PAGE_DESCRIPTIONS: Record<ActiveTab, string> = {
   'local-seo': 'Local SEO services that rank your business in the Google Map Pack: Google Business Profile optimization, 150+ local citations, and review generation from $997/mo.',
   'link-building': 'White-hat link building services with DR 40+ editorial backlinks, competitor gap analysis, and transparent reporting. Build the authority page 1 rankings require.',
   'lead-generation': 'SEO lead generation services that turn organic search into exclusive, trackable leads with call tracking, conversion pages, and high-intent keyword targeting.',
+  'contact': 'Talk to PGBlueprint about SEO and lead generation for your business. Call (949) 878-1316 or request a free search visibility audit.',
 };
 
 /** Every route that gets its own prerendered HTML file. */
