@@ -1,14 +1,22 @@
 import React from 'react';
-import { CheckCircle2, ArrowRight, MessageSquare } from 'lucide-react';
-import { LandingPageData } from '../types';
+import { CheckCircle2, ArrowRight, MessageSquare, ChevronRight } from 'lucide-react';
+import { ActiveTab, LandingPageData } from '../types';
+import { navLinkProps } from '../navLink';
+import { TAB_PATHS, SITE_ORIGIN } from '../routes';
 
 interface LandingPageProps {
   data: LandingPageData;
   onGoToPackages: () => void;
   onOpenReachOut: (subject?: string) => void;
+  setActiveTab: (tab: ActiveTab) => void;
 }
 
-export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, onOpenReachOut }) => {
+export const LandingPage: React.FC<LandingPageProps> = ({
+  data,
+  onGoToPackages,
+  onOpenReachOut,
+  setActiveTab,
+}) => {
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -19,9 +27,47 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, 
     })),
   };
 
+  const currentTab = data.id as ActiveTab;
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_ORIGIN}/` },
+      { '@type': 'ListItem', position: 2, name: 'SEO Services', item: `${SITE_ORIGIN}/services` },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: data.h1,
+        item: SITE_ORIGIN + (TAB_PATHS[currentTab] ?? '/'),
+      },
+    ],
+  };
+
   return (
     <div className="bg-[#f5fbfe]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+
+      {/* Breadcrumbs — visible + structured. Also the only in-body link back to
+          the /services hub these pages previously had. */}
+      <nav aria-label="Breadcrumb" className="max-w-4xl mx-auto px-4 sm:px-6 pt-6">
+        <ol className="flex flex-wrap items-center gap-1.5 text-xs text-stone-500">
+          <li>
+            <a {...navLinkProps('preview', setActiveTab)} className="hover:text-[#4f97c6] font-semibold">
+              Home
+            </a>
+          </li>
+          <li aria-hidden="true"><ChevronRight className="w-3 h-3 text-stone-300" /></li>
+          <li>
+            <a {...navLinkProps('services', setActiveTab)} className="hover:text-[#4f97c6] font-semibold">
+              SEO Services
+            </a>
+          </li>
+          <li aria-hidden="true"><ChevronRight className="w-3 h-3 text-stone-300" /></li>
+          <li className="text-stone-700 font-bold" aria-current="page">{data.kicker}</li>
+        </ol>
+      </nav>
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-16 pb-10 text-center">
@@ -102,6 +148,30 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data, onGoToPackages, 
           ))}
         </div>
       </section>
+
+      {/* Related services — contextual, descriptive-anchor internal links.
+          LandingPageData had no field for these, which is the mechanical reason
+          these pages were reachable only from the footer. */}
+      {data.relatedLinks && data.relatedLinks.length > 0 && (
+        <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-16">
+          <h2 className="text-2xl font-black text-stone-900 mb-5">Related services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {data.relatedLinks.map((link) => (
+              <a
+                key={link.tab}
+                {...navLinkProps(link.tab, setActiveTab)}
+                className="group bg-white border border-[#cbe3f1] hover:border-[#6aaed9] rounded-2xl p-5 transition-colors"
+              >
+                <span className="font-bold text-[#4f97c6] group-hover:underline flex items-center gap-1.5">
+                  {link.label}
+                  <ArrowRight className="w-3.5 h-3.5 shrink-0" />
+                </span>
+                <p className="mt-2 text-xs text-stone-600 leading-relaxed">{link.blurb}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Bottom CTA */}
       <section className="bg-[#1b2730] py-14">
