@@ -133,8 +133,8 @@ export const DASHBOARD_METRICS_EXPLANATIONS: DashboardMetricHighlight[] = [
   {
     id: 'organic-traffic',
     metricName: 'Organic Traffic',
-    currentValue: '25.4K Visits',
-    change: '+4.12% MoM',
+    currentValue: 'Tracked monthly',
+    change: 'Reported month over month',
     importanceRating: 'Critical Growth',
     explanation: 'Organic Traffic represents real human visitors reaching your website directly from unpaid Google search results. Unlike paid PPC ads that stop the second budget ends, organic traffic provides compounding, continuous customer leads without per-click cost.',
     howWeOptimize: 'We expand keyword coverage with targeted commercial blog articles, optimize title tags for high CTR, and push primary category pages up the rankings.',
@@ -143,8 +143,8 @@ export const DASHBOARD_METRICS_EXPLANATIONS: DashboardMetricHighlight[] = [
   {
     id: 'organic-keywords',
     metricName: 'Organic Keywords',
-    currentValue: '2.2K Keywords',
-    change: '+9.8% MoM',
+    currentValue: 'Full keyword footprint',
+    change: 'Top-10 movement tracked weekly',
     importanceRating: 'Critical Growth',
     explanation: 'The total number of search terms for which Google ranks your website in its top 100 search results. Expanding keyword footprint directly expands your digital market share.',
     howWeOptimize: 'Through in-depth search intent clustering and strategic content siloing, we continuously target high-volume long-tail search queries in your industry.',
@@ -153,8 +153,8 @@ export const DASHBOARD_METRICS_EXPLANATIONS: DashboardMetricHighlight[] = [
   {
     id: 'authority-score',
     metricName: 'Authority Score & Referring Domains',
-    currentValue: '28 AS (472 Ref. Domains)',
-    change: '+2.16% Ref. Domains',
+    currentValue: 'Authority score and referring domains',
+    change: 'New links verified with live URLs',
     importanceRating: 'Essential',
     explanation: 'Semrush Authority Score evaluates your domain’s total backlink trust and overall link popularity. Google uses backlink quality as one of its top 3 primary ranking signals.',
     howWeOptimize: 'We acquire high-DR contextual backlinks from authoritative niche publications, disavow toxic spam links, and build digital PR relationships.',
@@ -163,7 +163,7 @@ export const DASHBOARD_METRICS_EXPLANATIONS: DashboardMetricHighlight[] = [
   {
     id: 'ai-visibility',
     metricName: 'AI Search Visibility & Mentions',
-    currentValue: '30 AI Visibility (111 Mentions)',
+    currentValue: 'Brand mentions in AI answers',
     change: 'Active Across ChatGPT, Gemini & AI Overviews',
     importanceRating: 'Critical Growth',
     explanation: 'Tracks how frequently conversational AI models (ChatGPT, Google AI Overview, Gemini, Claude) reference and cite your domain when answering user questions.',
@@ -173,8 +173,8 @@ export const DASHBOARD_METRICS_EXPLANATIONS: DashboardMetricHighlight[] = [
   {
     id: 'site-audit',
     metricName: 'Site Audit & Technical Site Health',
-    currentValue: '85% Health Score (0 Critical Errors)',
-    change: '2 Errors / 32 Warnings Addressed',
+    currentValue: 'Technical health score',
+    change: 'Errors and warnings tracked to zero',
     importanceRating: 'Core Health',
     explanation: 'Site Audit measures technical crawler performance, broken links, Core Web Vitals speed scores, and mobile usability. A healthy site ensures Google bots crawl and index every page efficiently.',
     howWeOptimize: 'We resolve indexation blocks, implement XML sitemaps, optimize image weight, fix broken redirects, and inject JSON-LD schema.',
