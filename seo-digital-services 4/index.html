@@ -12,10 +12,73 @@
     <meta property="og:description" content="Grow your search rankings with proven organic SEO services. Keyword clustering, technical audits, and high-authority backlinks." />
     <meta property="og:url" content="https://www.pgblueprint.com/" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!--
+      Site-wide entity markup.
+
+      Lives in index.html so the prerenderer copies it into every static page.
+      This is the "pgblueprint.com is a real business" signal: a name, a phone
+      number, a location and a service area that Google can cross-reference
+      against the Google Business Profile and every citation. It was missing
+      entirely, which is part of why an unknown 10-day-old domain had trouble
+      earning index space.
+
+      No aggregateRating and no review markup — there are no verifiable reviews
+      yet, and invented review schema is a manual-action risk, not a shortcut.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.pgblueprint.com/#organization",
+          "name": "PGBlueprint",
+          "url": "https://www.pgblueprint.com",
+          "telephone": "+1-949-878-1316",
+          "email": "contact@pgblueprint.com",
+          "priceRange": "$$",
+          "description": "Search engine optimization and inbound lead generation for home service and trade businesses in South Orange County, California.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Laguna Niguel",
+            "addressRegion": "CA",
+            "postalCode": "92677",
+            "addressCountry": "US"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Laguna Niguel, CA" },
+            { "@type": "City", "name": "Dana Point, CA" },
+            { "@type": "City", "name": "San Juan Capistrano, CA" },
+            { "@type": "City", "name": "Mission Viejo, CA" },
+            { "@type": "City", "name": "Laguna Hills, CA" },
+            { "@type": "City", "name": "Aliso Viejo, CA" },
+            { "@type": "City", "name": "San Clemente, CA" },
+            { "@type": "City", "name": "Ladera Ranch, CA" },
+            { "@type": "City", "name": "Lake Forest, CA" },
+            { "@type": "City", "name": "Rancho Santa Margarita, CA" }
+          ],
+          "knowsAbout": [
+            "Local SEO",
+            "Google Business Profile optimization",
+            "Link building",
+            "Lead generation",
+            "Technical SEO"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.pgblueprint.com/#website",
+          "url": "https://www.pgblueprint.com",
+          "name": "PGBlueprint",
+          "publisher": { "@id": "https://www.pgblueprint.com/#organization" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
