@@ -18,24 +18,38 @@ export const BUSINESS = {
   region: 'CA',
   postalCode: '92677',
   country: 'US',
-  hours: 'Mon-Fri, 8am-6pm PT',
+  hours: 'Open 24/7',
 } as const;
 
 /**
- * Cities we actually serve. Kept short on purpose — thin city pages for places
- * you do not serve are a liability, not an asset.
+ * Cities and communities we serve, ordered outward from Laguna Niguel.
+ *
+ * A service-area list is a claim, not a keyword dump: only list places you
+ * would actually take a job in. Listing them here is low risk. Spinning each
+ * one into its own thin city page is where it turns into a liability — do that
+ * only for cities you have real content and real customers for.
  */
 export const SERVICE_AREAS = [
   'Laguna Niguel',
   'Dana Point',
+  'Laguna Beach',
   'San Juan Capistrano',
   'Mission Viejo',
   'Laguna Hills',
   'Aliso Viejo',
   'San Clemente',
   'Ladera Ranch',
-  'Lake Forest',
   'Rancho Santa Margarita',
+  'Lake Forest',
+  'Coto de Caza',
+  'Rancho Mission Viejo',
+  'Trabuco Canyon',
+  'Dove Canyon',
+  'Irvine',
+  'Newport Beach',
+  'Costa Mesa',
+  'Tustin',
+  'Huntington Beach',
 ] as const;
 
 export const REGION = 'South Orange County';
