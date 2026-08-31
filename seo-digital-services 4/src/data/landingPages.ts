@@ -42,7 +42,7 @@ export const LANDING_PAGES: Record<string, LandingPageData> = {
     faqs: [
       {
         q: 'How much do local SEO services cost?',
-        a: 'Our local SEO work is included in every package. The Starter plan is $997/month and covers Google Business Profile management, 100 citation submissions, and a review generation funnel. The Growth plan at $1,497/month expands citations to 150 and adds more content and backlinks. Both have a $500 one-time setup fee and a 3-month minimum.',
+        a: 'Our local SEO work is included in every package. The Starter plan is $997/month and covers Google Business Profile management, 100 citation submissions, and a review generation funnel. The Growth plan at $1,497/month expands citations to 150 and adds more content and backlinks. Setup fees are $2,000 (Starter) and $1,500 (Growth), both with a 6-month minimum.',
       },
       {
         q: 'How long does it take to rank in the Google Map Pack?',
@@ -192,7 +192,7 @@ export const LANDING_PAGES: Record<string, LandingPageData> = {
     faqs: [
       {
         q: 'How much do lead generation services cost?',
-        a: 'Lead generation is built into our SEO packages: Starter at $997/month and Growth at $1,497/month, each with a $500 setup fee and 3-month minimum. Unlike pay-per-lead services, every lead your rankings generate is yours exclusively at no additional per-lead cost.',
+        a: 'Lead generation is built into our SEO packages: Starter at $997/month and Growth at $1,497/month, with setup fees of $2,000 and $1,500 respectively and a 6-month minimum. Unlike pay-per-lead services, every lead your rankings generate is yours exclusively at no additional per-lead cost.',
       },
       {
         q: 'How is SEO lead generation different from buying leads?',

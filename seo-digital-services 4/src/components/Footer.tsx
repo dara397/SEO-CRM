@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenReachOut }) 
             </div>
 
             <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
-              Delivering high-ranking organic search engine optimization campaigns. Compliant with Google's organic health requirements, Core Web Vitals, and mobile responsiveness. Minimum 3-month commitment.
+              Delivering high-ranking organic search engine optimization campaigns. Compliant with Google's organic health requirements, Core Web Vitals, and mobile responsiveness. Minimum 6-month commitment.
             </p>
 
             {/* NAP — name, phone, locality. Local ranking systems cross-check

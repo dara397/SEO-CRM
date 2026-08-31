@@ -178,7 +178,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">{data.bottomCtaHeading}</h2>
           <p className="text-stone-400 text-sm mb-6">
-            Transparent monthly pricing from $997/mo. 3-month minimum. Free initial audit.
+            Transparent monthly pricing from $997/mo. 6-month minimum. Free initial audit.
           </p>
           <button
             onClick={() => onOpenReachOut(data.ctaSubject)}

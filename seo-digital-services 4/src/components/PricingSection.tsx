@@ -30,12 +30,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
           </h1>
 
           <p className="text-base sm:text-lg text-stone-600 leading-relaxed">
-            All our SEO packages require a <strong className="text-stone-900">minimum 3-month commitment</strong> so organic rankings have time to compound, with transparent pricing and custom enterprise plans available.
+            All our SEO packages require a <strong className="text-stone-900">minimum 6-month commitment</strong> so organic rankings have time to compound, with transparent pricing and custom enterprise plans available.
           </p>
 
           <div className="pt-2 flex flex-wrap justify-center items-center gap-3 text-xs font-semibold">
             <span className="bg-white px-3.5 py-1.5 rounded-xl border border-[#dceaf3] text-stone-700 shadow-2xs">
-              ✓ 3-Month Minimum Contract
+              ✓ 6-Month Minimum Contract
             </span>
             <span className="bg-white px-3.5 py-1.5 rounded-xl border border-[#dceaf3] text-stone-700 shadow-2xs">
               ✓ Transparent One-Time Setup Fees
@@ -97,7 +97,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                         <span className="text-stone-500 font-bold text-sm">/month</span>
                       </div>
                       <div className="text-xs text-stone-500 mt-1 font-medium">
-                        +${typeof plan.setupFee === 'number' ? plan.setupFee.toLocaleString() : plan.setupFee} Setup Fee • Min. 3 Months
+                        +${typeof plan.setupFee === 'number' ? plan.setupFee.toLocaleString() : plan.setupFee} Setup Fee • Min. 6 Months
                       </div>
                     </div>
                   )}

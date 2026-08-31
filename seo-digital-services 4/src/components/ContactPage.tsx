@@ -34,7 +34,7 @@ const FAQS = [
   },
   {
     q: 'What does it cost to start?',
-    a: 'Packages are $997/month (Starter) and $1,497/month (Growth), with a $500 one-time setup fee and a 3-month minimum. The audit itself is free and carries no obligation.',
+    a: 'Packages are $997/month (Starter) and $1,497/month (Growth), with a one-time setup fee of $2,000 (Starter) or $1,500 (Growth) and a 6-month minimum. The audit itself is free and carries no obligation.',
   },
   {
     q: 'Do you only work with local businesses?',

@@ -27,7 +27,7 @@ export const PAGE_DESCRIPTIONS: Record<ActiveTab, string> = {
   'preview': 'PGBlueprint is an organic search engine optimization agency delivering keyword strategy, technical audits, high-authority backlinks, and Page 1 Google rankings.',
   'what-is-seo': 'Learn how search engine optimization works, why organic rankings drive continuous business growth, and how PGBlueprint maximizes your Google search visibility.',
   'services': 'High-impact SEO services: managed campaigns, local SEO, technical audits, high-authority backlinks, ecommerce SEO, and AI search visibility.',
-  'pricing': 'Transparent SEO packages: Starter $997/mo, Growth $1,497/mo, or competitively priced custom plans. 3-month minimum commitment.',
+  'pricing': 'Transparent SEO packages: Starter $997/mo, Growth $1,497/mo, or competitively priced custom plans. 6-month minimum commitment.',
   'seo-tools': 'Curated SEO strategies, tips, and diagnostic tools to boost your Google ranking and organic search visibility.',
   'local-seo': 'Local SEO services that rank your business in the Google Map Pack: Google Business Profile optimization, 150+ local citations, and review generation from $997/mo.',
   'link-building': 'White-hat link building services with DR 40+ editorial backlinks, competitor gap analysis, and transparent reporting. Build the authority page 1 rankings require.',
